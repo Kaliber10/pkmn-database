@@ -1,5 +1,4 @@
 name: "Bulbasaur"
-form: "Floral"
 types:
   - "Grass"
 evolutions:
@@ -8,7 +7,6 @@ evolutions:
       level: 16
     pokemon:
       name: "Ivysaur"
-      form: "Floral"
 stats:
   hp: 45
   attack: 49
