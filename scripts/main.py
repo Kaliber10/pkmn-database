@@ -11,21 +11,26 @@ class DB_Entry():
         self.name = name
         self.path = path
 
-def _list_db_files(dir: str):
-    p = pathlib.Path(dir)
+    def __str__(self):
+        return f"{self.name} of db:{self.type}@{self.path}"
+
+def _list_db_files(db: pathlib.Path):
+
     info = []
-    for e in p.glob('*.yaml'):
-        name = e.parts[0] + e.parts[1]
-        info.append(DB_Entry(dir, name, str(e)))
+    for e in db.glob('**/*.yaml'):
+        name = e.parts[-2] + e.parts[-1]
+        info.append(DB_Entry(e.parts[-3], name, str(e)))
     return info    
 
 def main():
-    current = __file__
-    pokemon = _list_db_files(current + '../db/pokemon')
+    main_location = pathlib.Path(__file__)
+    top = main_location.parent.parent
+    pokemon_db = pathlib.Path(top).joinpath("db/pokemon")
+    pokemon = _list_db_files(pokemon_db)
 
     for p in pokemon:
-        data = yaml.safe_load(current + "../db/pokemon/" + p.path)
         try:
+            data = yaml.safe_load(open(p.path))
             build_pokemon.builder(data)
         except:
             traceback.print_exc()
