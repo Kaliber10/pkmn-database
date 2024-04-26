@@ -18,20 +18,22 @@ def _list_db_files(db: pathlib.Path):
 
     info = []
     for e in db.glob('**/*.yaml'):
-        name = e.parts[-2] + e.parts[-1]
+        name = e.parts[-2] + e.parts[-1].split(".")[0]
         info.append(DB_Entry(e.parts[-3], name, str(e)))
-    return info    
+    return info
 
 def main():
     main_location = pathlib.Path(__file__)
     top = main_location.parent.parent
     pokemon_db = pathlib.Path(top).joinpath("db/pokemon")
     pokemon = _list_db_files(pokemon_db)
-
+    pokemon_pages = pathlib.Path(top).joinpath("pokemon")
+    pokemon_pages.mkdir(exist_ok=True)
     for p in pokemon:
         try:
-            data = yaml.safe_load(open(p.path))
-            build_pokemon.builder(data)
+            f = open(pathlib.Path(pokemon_pages).joinpath(p.name + ".html"), "w+")
+            data = yaml.safe_load(open(p.path, "r"))
+            build_pokemon.builder(data, f)
         except:
             traceback.print_exc()
             return 1
