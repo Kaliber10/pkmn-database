@@ -1,0 +1,8 @@
+name: "Solar Conversion"
+description: ""
+target: "self"
+condition: "sunny"
+effect:
+  stat: "special attack"
+  action: "increase"
+  value: "50%"
