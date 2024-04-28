@@ -1,0 +1,17 @@
+name: "Squirtle"
+index: 7
+types:
+  - "Water"
+evolutions:
+  -
+    method:
+      level: 16
+    pokemon:
+      name: "Wartortle"
+stats:
+  hp: 44
+  attack: 48
+  defense: 65
+  special attack: 50
+  special defense: 64
+  speed: 43

@@ -1,0 +1,17 @@
+name: "Charmeleon"
+index: 5
+types:
+  - "Fire"
+evolutions:
+  -
+    method:
+      level: 36
+    pokemon:
+      name: "Charizard"
+stats:
+  hp: 58
+  attack: 80
+  defense: 58
+  special attack: 64
+  special defense: 65
+  speed: 80

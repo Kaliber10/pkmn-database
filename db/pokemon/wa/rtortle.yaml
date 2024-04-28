@@ -1,0 +1,17 @@
+name: "Wartortle"
+index: 8
+types:
+  - "Water"
+evolutions:
+  -
+    method:
+      level: 36
+    pokemon:
+      name: "Blastoise"
+stats:
+  hp: 59
+  attack: 63
+  defense: 80
+  special attack: 65
+  special defense: 80
+  speed: 58

@@ -1,0 +1,11 @@
+name: "Blastoise"
+index: 9
+types:
+  - "Water"
+stats:
+  hp: 87
+  attack: 85
+  defense: 105
+  special attack: 90
+  special defense: 90
+  speed: 73

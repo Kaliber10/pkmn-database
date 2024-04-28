@@ -1,0 +1,17 @@
+name: "Charmander"
+index: 4
+types:
+  - "Fire"
+evolutions:
+  -
+    method:
+      level: 16
+    pokemon:
+      name: "Charmeleon"
+stats:
+  hp: 58
+  attack: 80
+  defense: 58
+  special attack: 64
+  special defense: 65
+  speed: 80
