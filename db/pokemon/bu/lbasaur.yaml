@@ -1,9 +1,11 @@
 name: "Bulbasaur"
+category: "Seed"
+index: 1
 types:
   - "Grass"
 evolutions:
   -
-    method: 
+    method:
       level: 16
     pokemon:
       name: "Ivysaur"
