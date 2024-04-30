@@ -6,7 +6,7 @@ types:
 stats:
   hp: 95
   attack: 90
-  defense: 73
+  defense: 83
   special attack: 95
   special defense: 90
   speed: 72

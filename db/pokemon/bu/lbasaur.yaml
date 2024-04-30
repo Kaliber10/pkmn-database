@@ -10,9 +10,9 @@ evolutions:
     pokemon:
       name: "Ivysaur"
 stats:
-  hp: 45
-  attack: 49
+  hp: 60
+  attack: 57
   defense: 49
-  special attack: 65
-  special defense: 65
-  speed: 45
+  special attack: 60
+  special defense: 55
+  speed: 37
