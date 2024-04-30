@@ -1,4 +1,5 @@
 name: "Charmander"
+category: "Lizard"
 index: 4
 types:
   - "Fire"
