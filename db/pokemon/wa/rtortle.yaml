@@ -10,9 +10,9 @@ evolutions:
     pokemon:
       name: "Blastoise"
 stats:
-  hp: 59
-  attack: 63
-  defense: 80
-  special attack: 65
-  special defense: 80
-  speed: 58
+  hp: 67
+  attack: 65
+  defense: 85
+  special attack: 67
+  special defense: 68
+  speed: 53

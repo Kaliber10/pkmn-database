@@ -10,9 +10,9 @@ evolutions:
     pokemon:
       name: "Wartortle"
 stats:
-  hp: 44
-  attack: 48
-  defense: 65
-  special attack: 50
-  special defense: 64
-  speed: 43
+  hp: 52
+  attack: 40
+  defense: 70
+  special attack: 52
+  special defense: 52
+  speed: 38

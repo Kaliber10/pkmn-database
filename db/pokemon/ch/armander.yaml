@@ -10,9 +10,9 @@ evolutions:
     pokemon:
       name: "Charmeleon"
 stats:
-  hp: 58
-  attack: 80
-  defense: 58
-  special attack: 64
-  special defense: 65
-  speed: 80
+  hp: 39
+  attack: 60
+  defense: 43
+  special attack: 55
+  special defense: 50
+  speed: 62

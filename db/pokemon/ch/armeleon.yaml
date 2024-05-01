@@ -11,8 +11,8 @@ evolutions:
       name: "Charizard"
 stats:
   hp: 58
-  attack: 80
+  attack: 82
   defense: 58
-  special attack: 64
+  special attack: 67
   special defense: 65
-  speed: 80
+  speed: 75
