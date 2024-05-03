@@ -1,0 +1,18 @@
+name: "Caterpie"
+category: "Worm"
+index: 10
+types:
+  - "Bug"
+evolutions:
+  -
+    method:
+      level: 9
+    pokemon:
+      name: "Metapod"
+stats:
+  hp: 45
+  attack: 40
+  defense: 35
+  special attack: 20
+  special defense: 20
+  speed: 45

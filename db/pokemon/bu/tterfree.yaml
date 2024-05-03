@@ -1,0 +1,13 @@
+name: "Butterfree"
+category: "Butterfly"
+index: 12
+types:
+  - "Bug"
+  - "Flying"
+stats:
+  hp: 67
+  attack: 50
+  defense: 55
+  special attack: 90
+  special defense: 102
+  speed: 73
