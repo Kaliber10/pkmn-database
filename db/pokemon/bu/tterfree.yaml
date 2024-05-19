@@ -6,8 +6,8 @@ types:
   - "Flying"
 stats:
   hp: 67
-  attack: 50
-  defense: 55
-  special attack: 90
-  special defense: 102
-  speed: 73
+  attack: 47
+  defense: 53
+  special attack: 83
+  special defense: 92
+  speed: 80
