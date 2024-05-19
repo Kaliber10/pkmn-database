@@ -1,0 +1,19 @@
+name: "Kakuna"
+category: "Cocoon"
+index: 14
+types:
+  - "Bug"
+  - "Poison"
+evolutions:
+  -
+    method:
+      level: 20
+    pokemon:
+      name: "Beedril"
+stats:
+  hp: 55
+  attack: 40
+  defense: 100
+  special attack: 25
+  special defense: 45
+  speed: 25

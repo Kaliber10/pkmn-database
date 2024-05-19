@@ -1,0 +1,19 @@
+name: "Weedle"
+category: "Hairy Bug"
+index: 13
+types:
+  - "Bug"
+  - "Poison"
+evolutions:
+  -
+    method:
+      level: 9
+    pokemon:
+      name: "Kakuna"
+stats:
+  hp: 45
+  attack: 45
+  defense: 35
+  special attack: 20
+  special defense: 20
+  speed: 40

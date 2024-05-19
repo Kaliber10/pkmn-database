@@ -1,0 +1,13 @@
+name: "Beedril"
+category: "Poison Bee"
+index: 15
+types:
+  - "Bug"
+  - "Poison"
+stats:
+  hp: 65
+  attack: 92
+  defense: 57
+  special attack: 50
+  special defense: 67
+  speed: 106
