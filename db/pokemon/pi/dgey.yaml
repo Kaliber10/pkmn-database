@@ -1,0 +1,19 @@
+name: "Pidgey"
+category: "Tiny Bird"
+index: 16
+types:
+  - "Normal"
+  - "Flying"
+evolutions:
+  -
+    method:
+      level: 18
+    pokemon:
+      name: "Pidgeotto"
+stats:
+  hp: 40
+  attack: 45
+  defense: 35
+  special attack: 55
+  special defense: 35
+  speed: 66

@@ -1,0 +1,19 @@
+name: "Pidgeotto"
+category: "Bird"
+index: 17
+types:
+  - "Normal"
+  - "Flying"
+evolutions:
+  -
+    method:
+      level: 36
+    pokemon:
+      name: "Pidgeot"
+stats:
+  hp: 63
+  attack: 60
+  defense: 50
+  special attack: 70
+  special defense: 50
+  speed: 81

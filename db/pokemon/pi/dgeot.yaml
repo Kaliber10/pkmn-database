@@ -1,0 +1,13 @@
+name: "Pidgeot"
+category: "Bird"
+index: 18
+types:
+  - "Normal"
+  - "Flying"
+stats:
+  hp: 83
+  attack: 80
+  defense: 70
+  special attack: 90
+  special defense: 70
+  speed: 101
