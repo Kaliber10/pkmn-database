@@ -1,0 +1,12 @@
+name: "Sandslash"
+category: "Mouse"
+index: 29
+types:
+  - "Ground"
+stats:
+  hp: 75
+  attack: 100
+  defense: 110
+  special attack: 45
+  special defense: 55
+  speed: 65
