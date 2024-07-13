@@ -1,0 +1,12 @@
+name: "Arbok"
+category: "Cobra"
+index: 24
+types:
+  - "Poison"
+stats:
+  hp: 60
+  attack: 95
+  defense: 74
+  special attack: 65
+  special defense: 79
+  speed: 75

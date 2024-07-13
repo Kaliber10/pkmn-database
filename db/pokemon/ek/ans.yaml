@@ -1,0 +1,12 @@
+name: "Ekans"
+category: "Snake"
+index: 23
+types:
+  - "Poison"
+stats:
+  hp: 35
+  attack: 65
+  defense: 49
+  special attack: 40
+  special defense: 54
+  speed: 50
