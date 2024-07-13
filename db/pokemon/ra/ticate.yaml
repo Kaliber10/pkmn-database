@@ -1,0 +1,12 @@
+name: "Raticate"
+category: "Mouse"
+index: 20
+types:
+  - "Normal"
+stats:
+  hp: 60
+  attack: 81
+  defense: 70
+  special attack: 50
+  special defense: 70
+  speed: 97
