@@ -1,0 +1,13 @@
+name: "Fearow"
+category: "Beak"
+index: 22
+types:
+  - "Normal"
+  - "Flying"
+stats:
+  hp: 70
+  attack: 97
+  defense: 66
+  special attack: 61
+  special defense: 66
+  speed: 87

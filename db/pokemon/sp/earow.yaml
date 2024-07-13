@@ -1,0 +1,19 @@
+name: "Spearow"
+category: "Tiny Bird"
+index: 21
+types:
+  - "Normal"
+  - "Flying"
+evolutions:
+  -
+    method:
+      level: 20
+    pokemon:
+      name: "Fearow"
+stats:
+  hp: 40
+  attack: 62
+  defense: 36
+  special attack: 26
+  special defense: 36
+  speed: 57
