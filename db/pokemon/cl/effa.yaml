@@ -1,0 +1,18 @@
+name: "Cleffa"
+category: "Star Shape"
+index: 35
+types:
+  - "Fairy"
+evolutions:
+  -
+    method:
+      level: 14
+    pokemon:
+      name: "Clefairy"
+stats:
+  hp: 50
+  attack: 25
+  defense: 28
+  special attack: 45
+  special defense: 55
+  speed: 20

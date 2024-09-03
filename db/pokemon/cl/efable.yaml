@@ -1,0 +1,12 @@
+name: "Clefable"
+category: "Fairy"
+index: 37
+types:
+  - "Fairy"
+stats:
+  hp: 95
+  attack: 70
+  defense: 73
+  special attack: 95
+  special defense: 90
+  speed: 60
