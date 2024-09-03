@@ -1,0 +1,13 @@
+name: "Nidoking"
+category: "Poison Pin"
+index: 34
+types:
+  - "Poison"
+  - "Fighting"
+stats:
+  hp: 81
+  attack: 102
+  defense: 85
+  special attack: 77
+  special defense: 75
+  speed: 85

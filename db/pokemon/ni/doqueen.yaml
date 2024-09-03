@@ -1,0 +1,13 @@
+name: "Nidoqueen"
+category: "Drill"
+index: 32
+types:
+  - "Poison"
+  - "Fighting"
+stats:
+  hp: 85
+  attack: 81
+  defense: 102
+  special attack: 75
+  special defense: 86
+  speed: 77
