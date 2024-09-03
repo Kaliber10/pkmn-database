@@ -1,0 +1,18 @@
+name: "Vulpix"
+category: "Fox"
+index: 38
+types:
+  - "Fire"
+evolutions:
+  -
+    method:
+      item: "Fire Stone"
+    pokemon:
+      name: "Ninetales"
+stats:
+  hp: 58
+  attack: 30
+  defense: 38
+  special attack: 64
+  special defense: 65
+  speed: 37

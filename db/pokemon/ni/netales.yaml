@@ -1,0 +1,13 @@
+name: "Ninetales"
+category: "Fox"
+index: 39
+types:
+  - "Fire"
+  - "Fairy"
+stats:
+  hp: 93
+  attack: 65
+  defense: 73
+  special attack: 95
+  special defense: 100
+  speed: 72
