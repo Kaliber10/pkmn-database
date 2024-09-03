@@ -1,0 +1,18 @@
+name: "Jigglypuff"
+category: "Balloon"
+index: 41
+types:
+  - "Normal"
+evolutions:
+  -
+    method:
+      item: "Moon Stone"
+    pokemon:
+      name: "Wigglytuff"
+stats:
+  hp: 115
+  attack: 45
+  defense: 20
+  special attack: 45
+  special defense: 25
+  speed: 20

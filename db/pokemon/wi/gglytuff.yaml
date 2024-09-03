@@ -1,0 +1,12 @@
+name: "Wigglytuff"
+category: "Balloon"
+index: 42
+types:
+  - "Normal"
+stats:
+  hp: 140
+  attack: 85
+  defense: 45
+  special attack: 70
+  special defense: 50
+  speed: 45
