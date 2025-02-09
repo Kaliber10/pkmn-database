@@ -3,6 +3,12 @@ category: "Snake"
 index: 23
 types:
   - "Poison"
+evolution:
+  -
+    method:
+      level: 22
+    pokemon:
+      name: "Arbok"
 stats:
   hp: 35
   attack: 65
