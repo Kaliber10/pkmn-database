@@ -1,0 +1,12 @@
+name: "Crobat"
+category: "Bat"
+index: 45
+types:
+  - "Flying"
+stats:
+  hp: 85
+  attack: 90
+  defense: 80
+  special attack: 70
+  special defense: 80
+  speed: 130
