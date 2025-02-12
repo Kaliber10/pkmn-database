@@ -1,0 +1,19 @@
+name: "Paras"
+category: "Mushroom"
+index: 50
+types:
+  - "Bug"
+  - "Grass"
+evolutions:
+  -
+    method:
+      item: "Leaf Stone"
+    pokemon:
+      name: "Parasect"
+stats:
+  hp: 35
+  attack: 70
+  defense: 55
+  special attack: 45
+  special defense: 55
+  speed: 45
