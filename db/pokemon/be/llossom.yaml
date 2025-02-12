@@ -1,0 +1,12 @@
+name: "Bellossom"
+category: "Flower"
+index: 49
+types:
+  - "Grass"
+stats:
+  hp: 75
+  attack: 80
+  defense: 90
+  special attack: 90
+  special defense: 100
+  speed: 50

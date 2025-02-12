@@ -1,0 +1,13 @@
+name: "Vileplume"
+category: "Flower"
+index: 48
+types:
+  - "Grass"
+  - "Poison"
+stats:
+  hp: 75
+  attack: 80
+  defense: 85
+  special attack: 110
+  special defense: 95
+  speed: 50

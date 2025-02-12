@@ -1,0 +1,27 @@
+name: "Gloom"
+category: "Weed"
+index: 47
+types:
+  - "Grass"
+evolutions:
+  -
+    method:
+      level: 35
+      condition:
+        time: "Night"
+    pokemon:
+      name: "Vileplume"
+  -
+    method:
+      level: 35
+      condition:
+        time: "Night"
+    pokemon:
+      name: "Bellossom"
+stats:
+  hp: 60
+  attack: 65
+  defense: 70
+  special attack: 85
+  special defense: 75
+  speed: 40
