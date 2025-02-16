@@ -1,0 +1,19 @@
+name: "Growlithe"
+category: "Puppy"
+index: 62
+types:
+  - "Fire"
+evolutions:
+  -
+    method:
+      happiness:
+        eq_exceeds: 220 
+    pokemon:
+      name: "Arcanine"
+stats:
+  hp: 55
+  attack: 70
+  defense: 45
+  special attack: 70
+  special defense: 50
+  speed: 60

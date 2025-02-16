@@ -1,0 +1,12 @@
+name: "Arcanine"
+category: "Legendary"
+index: 63
+types:
+  - "Fire"
+stats:
+  hp: 90
+  attack: 110
+  defense: 80
+  special attack: 100
+  special defense: 90
+  speed: 95
