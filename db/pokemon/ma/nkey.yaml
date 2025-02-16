@@ -1,0 +1,18 @@
+name: "Mankey"
+category: "Pig Monkey"
+index: 60
+types:
+  - "Fighting"
+evolutions:
+  -
+    method:
+      level: 28
+    pokemon:
+      name: "Primeape"
+stats:
+  hp: 40
+  attack: 80
+  defense: 35
+  special attack: 35
+  special defense: 45
+  speed: 70
