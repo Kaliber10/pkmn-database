@@ -1,0 +1,13 @@
+name: "Venomoth"
+category: "Poison Moth"
+index: 53
+types:
+  - "Bug"
+  - "Poison"
+stats:
+  hp: 70
+  attack: 65
+  defense: 75
+  special attack: 90
+  special defense: 75
+  speed: 90

@@ -1,0 +1,19 @@
+name: "Venonat"
+category: "Insect"
+index: 52
+types:
+  - "Bug"
+  - "Poison"
+evolutions:
+  -
+    method:
+      level: 31
+    pokemon:
+      name: "Venomoth"
+stats:
+  hp: 60
+  attack: 55
+  defense: 50
+  special attack: 40
+  special defense: 55
+  speed: 45
