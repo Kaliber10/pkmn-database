@@ -1,0 +1,13 @@
+name: "Golduck"
+category: "Duck"
+index: 59
+types:
+  - "Water"
+  - "Psychic"
+stats:
+  hp: 80
+  attack: 82
+  defense: 78
+  special attack: 78
+  special defense: 85
+  speed: 80

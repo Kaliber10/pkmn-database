@@ -1,0 +1,19 @@
+name: "Psyduck"
+category: "Duck"
+index: 58
+types:
+  - "Water"
+  - "Psychic"
+evolutions:
+  -
+    method:
+      level: 33
+    pokemon:
+      name: "Golduck"
+stats:
+  hp: 50
+  attack: 52
+  defense: 48
+  special attack: 65
+  special defense: 50
+  speed: 55
