@@ -1,0 +1,18 @@
+name: "Diglett"
+category: "Mole"
+index: 54
+types:
+  - "Ground"
+evolutions:
+  -
+    method:
+      level: 22
+    pokemon:
+      name: "Dugtrio"
+stats:
+  hp: 10
+  attack: 55
+  defense: 25
+  special attack: 35
+  special defense: 45
+  speed: 95

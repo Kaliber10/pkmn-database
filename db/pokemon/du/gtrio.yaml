@@ -1,0 +1,12 @@
+name: "Dugtrio"
+category: "Mole"
+index: 55
+types:
+  - "Ground"
+stats:
+  hp: 35
+  attack: 100
+  defense: 50
+  special attack: 50
+  special defense: 70
+  speed: 120
