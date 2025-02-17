@@ -1,0 +1,12 @@
+name: "Alakazam"
+category: "Psi"
+index: 70
+types:
+  - "Psychic"
+stats:
+  hp: 55
+  attack: 50
+  defense: 45
+  special attack: 70
+  special defense: 95
+  speed: 120
