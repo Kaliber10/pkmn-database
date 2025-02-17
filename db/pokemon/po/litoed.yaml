@@ -1,0 +1,12 @@
+name: "Politoed"
+category: "Frog"
+index: 67
+types:
+  - "Water"
+stats:
+  hp: 90
+  attack: 70
+  defense: 75
+  special attack: 95
+  special defense: 100
+  speed: 80

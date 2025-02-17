@@ -1,0 +1,23 @@
+name: "Poliwhirl"
+category: "Tadpole"
+index: 65
+types:
+  - "Water"
+evolutions:
+  -
+    method:
+      item: "Water Stone"
+    pokemon:
+      name: "Poliwrath"
+  -
+    method:
+      level: 38
+    pokemon:
+      name: "Politoed"
+stats:
+  hp: 65
+  attack: 60
+  defense: 60
+  special attack: 55
+  special defense: 55
+  speed: 90
