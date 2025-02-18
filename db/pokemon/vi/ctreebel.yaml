@@ -1,0 +1,13 @@
+name: "Victreebel"
+category: "Flycatcher"
+index: 76
+types:
+  - "Grass"
+  - "Poison"
+stats:
+  hp: 93
+  attack: 95
+  defense: 70
+  special attack: 100
+  special defense: 70
+  speed: 62

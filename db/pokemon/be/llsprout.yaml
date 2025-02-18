@@ -1,0 +1,19 @@
+name: "Bellsprout"
+category: "Flower"
+index: 74
+types:
+  - "Grass"
+  - "Poison"
+evolutions:
+  -
+    method:
+      level: 21
+    pokemon:
+      name: "Weepinbell"
+stats:
+  hp: 50
+  attack: 70
+  defense: 35
+  special attack: 50
+  special defense: 30
+  speed: 65
