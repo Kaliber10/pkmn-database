@@ -1,0 +1,18 @@
+name: "Machoke"
+category: "Superpower"
+index: 72
+types:
+  - "Fighting"
+evolutions:
+  -
+    method:
+      level: 38
+    pokemon:
+      name: "Machamp"
+stats:
+  hp: 80
+  attack: 100
+  defense: 70
+  special attack: 50
+  special defense: 60
+  speed: 45
