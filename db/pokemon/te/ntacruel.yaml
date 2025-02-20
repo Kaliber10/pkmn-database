@@ -1,0 +1,13 @@
+name: "Tentacruel"
+category: "Jellyfish"
+index: 78
+types:
+  - "Water"
+  - "Poison"
+stats:
+  hp: 90
+  attack: 85
+  defense: 65
+  special attack: 100
+  special defense: 100
+  speed: 75

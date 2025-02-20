@@ -1,0 +1,19 @@
+name: "Tentacool"
+category: "Jellyfish"
+index: 77
+types:
+  - "Water"
+  - "Poison"
+evolutions:
+  -
+    method:
+      level: 30
+    pokemon:
+      name: "Tentacruel"
+stats:
+  hp: 50
+  attack: 65
+  defense: 35
+  special attack: 50
+  special defense: 70
+  speed: 65
