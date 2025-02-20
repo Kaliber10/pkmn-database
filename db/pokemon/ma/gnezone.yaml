@@ -1,0 +1,13 @@
+name: "Magnezone"
+category: "Magnet"
+index: 88
+types:
+  - "Electric"
+  - "Steel"
+stats:
+  hp: 70
+  attack: 70
+  defense: 115
+  special attack: 130
+  special defense: 90
+  speed: 60
