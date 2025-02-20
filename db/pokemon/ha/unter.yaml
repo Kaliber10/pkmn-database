@@ -1,0 +1,18 @@
+name: "Haunter"
+category: "Gas"
+index: 99
+types:
+  - "Ghost"
+evolutions:
+  -
+    method:
+      level: 39
+    pokemon:
+      name: "Gengar"
+stats:
+  hp: 45
+  attack: 50
+  defense: 45
+  special attack: 115
+  special defense: 55
+  speed: 95
