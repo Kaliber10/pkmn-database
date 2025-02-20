@@ -1,0 +1,12 @@
+name: "Golem"
+category: "Megaton"
+index: 81
+types:
+  - "Rock"
+stats:
+  hp: 80
+  attack: 120
+  defense: 130
+  special attack: 55
+  special defense: 65
+  speed: 45
