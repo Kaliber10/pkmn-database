@@ -1,0 +1,13 @@
+name: "Dodrio"
+category: "Triple Bird"
+index: 91
+types:
+  - "Normal"
+  - "Flying"
+stats:
+  hp: 60
+  attack: 110
+  defense: 70
+  special attack: 60
+  special defense: 60
+  speed: 100

@@ -1,0 +1,19 @@
+name: "Doduo"
+category: "Twin Bird"
+index: 90
+types:
+  - "Normal"
+  - "Flying"
+evolutions:
+  -
+    method:
+      level: 31
+    pokemon:
+      name: "Dodrio"
+stats:
+  hp: 35
+  attack: 85
+  defense: 45
+  special attack: 35
+  special defense: 35
+  speed: 75
