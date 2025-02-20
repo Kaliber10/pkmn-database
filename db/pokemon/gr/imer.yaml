@@ -1,0 +1,19 @@
+name: "Grimer"
+category: "Sludge"
+index: 94
+types:
+  - "Poison"
+  - "Fairy"
+evolutions:
+  -
+    method:
+      item: "Moon Stone"
+    pokemon:
+      name: "Muk"
+stats:
+  hp: 80
+  attack: 80
+  defense: 50
+  special attack: 40
+  special defense: 50
+  speed: 25

@@ -1,0 +1,13 @@
+name: "Muk"
+category: "Sludge"
+index: 95
+types:
+  - "Poison"
+  - "Fairy"
+stats:
+  hp: 105
+  attack: 105
+  defense: 75
+  special attack: 65
+  special defense: 100
+  speed: 50
