@@ -1,0 +1,12 @@
+name: "Rapidash"
+category: "Fire Horse"
+index: 83
+types:
+  - "Fire"
+stats:
+  hp: 65
+  attack: 100
+  defense: 70
+  special attack: 75
+  special defense: 80
+  speed: 110

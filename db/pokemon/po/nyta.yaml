@@ -1,0 +1,18 @@
+name: "Ponyta"
+category: "Fire Horse"
+index: 82
+types:
+  - "Fire"
+evolutions:
+  -
+    method:
+      level: 35
+    pokemon:
+      name: "Rapidash"
+stats:
+  hp: 50
+  attack: 85
+  defense: 55
+  special attack: 65
+  special defense: 65
+  speed: 90
