@@ -1,0 +1,18 @@
+name: "Shellder"
+category: "Bivalve"
+index: 96
+types:
+  - "Water"
+evolutions:
+  -
+    method:
+      level: 34
+    pokemon:
+      name: "Cloyster"
+stats:
+  hp: 30
+  attack: 65
+  defense: 100
+  special attack: 45
+  special defense: 25
+  speed: 35
