@@ -1,0 +1,13 @@
+name: "Dewgong"
+category: "Sea Lion"
+index: 93
+types:
+  - "Water"
+  - "Ice"
+stats:
+  hp: 105
+  attack: 80
+  defense: 95
+  special attack: 70
+  special defense: 95
+  speed: 70
