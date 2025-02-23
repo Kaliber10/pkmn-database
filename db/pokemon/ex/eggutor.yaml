@@ -1,0 +1,13 @@
+name: "Exeggutor"
+category: "Coconut"
+index: 110
+types:
+  - "Grass"
+  - "Psychic"
+stats:
+  hp: 95
+  attack: 95
+  defense: 85
+  special attack: 125
+  special defense: 75
+  speed: 55
