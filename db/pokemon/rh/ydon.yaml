@@ -1,0 +1,18 @@
+name: "Rhydon"
+category: "Drill"
+index: 122
+types:
+  - "Rock"
+evolutions:
+  -
+    method:
+      level: 30
+    pokemon:
+      name: "Rhyperior"
+stats:
+  hp: 105
+  attack: 130
+  defense: 120
+  special attack: 45
+  special defense: 45
+  speed: 40

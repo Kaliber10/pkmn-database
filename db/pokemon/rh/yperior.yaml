@@ -1,0 +1,12 @@
+name: "Rhyperior"
+category: "Drill"
+index: 123
+types:
+  - "Rock"
+stats:
+  hp: 115
+  attack: 135
+  defense: 135
+  special attack: 65
+  special defense: 55
+  speed: 30
