@@ -15,7 +15,7 @@ evolutions:
     method:
       level: 35
       condition:
-        time: "Night"
+        time: "Day"
     pokemon:
       name: "Bellossom"
 stats:
