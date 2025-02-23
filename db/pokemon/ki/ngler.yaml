@@ -1,0 +1,12 @@
+name: "Kingler"
+category: "Pincer"
+index: 106
+types:
+  - "Water"
+stats:
+  hp: 55
+  attack: 130
+  defense: 115
+  special attack: 50
+  special defense: 50
+  speed: 75
