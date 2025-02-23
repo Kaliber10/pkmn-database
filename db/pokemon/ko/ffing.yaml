@@ -1,0 +1,18 @@
+name: "Koffing"
+category: "Poison Gas"
+index: 119
+types:
+  - "Poison"
+evolutions:
+  -
+    method:
+      level: 35
+    pokemon:
+      name: "Weezing"
+stats:
+  hp: 40
+  attack: 60
+  defense: 95
+  special attack: 65
+  special defense: 45
+  speed: 35
