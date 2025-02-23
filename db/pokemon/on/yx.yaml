@@ -1,0 +1,19 @@
+name: "Onyx"
+category: "Rock Snake"
+index: 101
+types:
+  - "Rock"
+  - "Ground"
+evolutions:
+  -
+    method:
+      level: 35
+    pokemon:
+      name: "Steelix"
+stats:
+  hp: 35
+  attack: 45
+  defense: 160
+  special attack: 30
+  special defense: 45
+  speed: 70
