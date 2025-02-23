@@ -1,0 +1,18 @@
+name: "Cubone"
+category: "Lonely"
+index: 111
+types:
+  - "Ground"
+evolutions:
+  -
+    method:
+      level: 28
+    pokemon:
+      name: "Marowak"
+stats:
+  hp: 50
+  attack: 50
+  defense: 95
+  special attack: 40
+  special defense: 50
+  speed: 35
