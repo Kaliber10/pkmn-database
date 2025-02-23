@@ -1,0 +1,12 @@
+name: "Electrode"
+category: "Ball"
+index: 108
+types:
+  - "Electric"
+stats:
+  hp: 60
+  attack: 50
+  defense: 70
+  special attack: 80
+  special defense: 80
+  speed: 105
