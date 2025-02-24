@@ -1,0 +1,12 @@
+name: "Seaking"
+category: "Goldfish"
+index: 134
+types:
+  - "Water"
+stats:
+  hp: 80
+  attack: 102
+  defense: 65
+  special attack: 65
+  special defense: 80
+  speed: 88
