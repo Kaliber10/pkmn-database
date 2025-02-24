@@ -1,0 +1,12 @@
+name: "Tangrowth"
+category: "Vine"
+index: 128
+types:
+  - "Grass"
+stats:
+  hp: 110
+  attack: 102
+  defense: 128
+  special attack: 70
+  special defense: 75
+  speed: 50

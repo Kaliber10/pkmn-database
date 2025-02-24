@@ -1,0 +1,18 @@
+name: "Tangela"
+category: "Vine"
+index: 127
+types:
+  - "Grass"
+evolutions:
+  -
+    method:
+      level: 38
+    pokemon:
+      name:  "Tangrowth"
+stats:
+  hp: 70
+  attack: 95
+  defense: 110
+  special attack: 45
+  special defense: 55
+  speed: 60
