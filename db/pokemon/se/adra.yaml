@@ -1,0 +1,18 @@
+name: "Seadra"
+category: "Dragon"
+index: 131
+types:
+  - "Water"
+evolutions:
+  -
+    method:
+      level: 48
+    pokemon:
+      name: "Kingdra"
+stats:
+  hp: 55
+  attack: 65
+  defense: 80
+  special attack: 95
+  special defense: 80
+  speed: 75

@@ -1,0 +1,18 @@
+name: "Horsea"
+category: "Dragon"
+index: 130
+types:
+  - "Water"
+evolutions:
+  -
+    method:
+      level: 32
+    pokemon:
+      name: "Seadra"
+stats:
+  hp: 35
+  attack: 40
+  defense: 55
+  special attack: 65
+  special defense: 40
+  speed: 60

@@ -1,0 +1,13 @@
+name: "Kingdra"
+category: "Dragon"
+index: 132
+types:
+  - "Water"
+  - "Dragon"
+stats:
+  hp: 75
+  attack: 75
+  defense: 95
+  special attack: 115
+  special defense: 95
+  speed: 85
