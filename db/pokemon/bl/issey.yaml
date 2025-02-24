@@ -1,0 +1,12 @@
+name: "Blissey"
+category: "Happiness"
+index: 126
+types:
+  - "Normal"
+stats:
+  hp: 255
+  attack: 10
+  defense: 10
+  special attack: 75
+  special defense: 135
+  speed: 55

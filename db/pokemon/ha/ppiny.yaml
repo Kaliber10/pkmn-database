@@ -1,0 +1,18 @@
+name: "Happiny"
+category: "Playhouse"
+index: 124
+types:
+  - "Normal"
+evolutions:
+  -
+    method:
+      level: 20
+    pokemon:
+      name: "Chansey"
+stats:
+  hp: 100
+  attack: 5
+  defense: 5
+  special attack: 15
+  special defense: 65
+  speed: 30

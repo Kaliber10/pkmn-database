@@ -1,0 +1,19 @@
+name: "Chansey"
+category: "Egg"
+index: 125
+types:
+  - "Normal"
+evolutions:
+  -
+    method:
+      happiness:
+        eq_exceeds: 220
+    pokemon:
+      name: "Blissey"
+stats:
+  hp: 250
+  attack: 5
+  defense: 5
+  special attack: 35
+  special defense: 105
+  speed: 50
