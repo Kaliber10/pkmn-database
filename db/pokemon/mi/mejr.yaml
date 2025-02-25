@@ -1,0 +1,19 @@
+name: "Mime Jr."
+category: "Mime"
+index: 137
+types:
+  - "Psychic"
+  - "Fairy"
+evolutions:
+  -
+    method:
+      level: 30
+    pokemon:
+      name: "Mr. Mime"
+stats:
+  hp: 20
+  attack: 25
+  defense: 45
+  special attack: 70
+  special defense: 90
+  speed: 60
