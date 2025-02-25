@@ -1,0 +1,13 @@
+name: "Starmie"
+category: "Mysterious"
+index: 136
+types:
+  - "Water"
+  - "Psychic"
+stats:
+  hp: 70
+  attack: 65
+  defense: 85
+  special attack: 100
+  special defense: 85
+  speed: 115
