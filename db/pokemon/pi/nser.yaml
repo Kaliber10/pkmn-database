@@ -1,0 +1,12 @@
+name: "Pinser"
+category: "Stag Beetle"
+index: 149
+types:
+  - "Bug"
+stats:
+  hp: 65
+  attack: 125
+  defense: 100
+  special attack: 55
+  special defense: 70
+  speed: 85
