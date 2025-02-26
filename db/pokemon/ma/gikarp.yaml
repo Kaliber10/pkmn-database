@@ -1,0 +1,18 @@
+name: "Magikarp"
+category: "Fish"
+index: 151
+types:
+  - "Water"
+evolutions:
+  -
+    method:
+      level: 20
+    pokemon:
+      name: "Gyarados"
+stats:
+  hp: 20
+  attack: 10
+  defense: 55
+  special attack: 15
+  special defense: 30
+  speed: 80

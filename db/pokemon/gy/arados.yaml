@@ -1,0 +1,13 @@
+name: "Gyarados"
+category: "Atrocious"
+index: 152
+types:
+  - "Dragon"
+  - "Dark"
+stats:
+  hp: 95
+  attack: 125
+  defense: 79
+  special attack: 75
+  special defense: 85
+  speed: 81
