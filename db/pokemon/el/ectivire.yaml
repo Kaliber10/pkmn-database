@@ -1,0 +1,12 @@
+name: "Electivire"
+category: "Thunderbolt"
+index: 145
+types:
+  - "Electric"
+stats:
+  hp: 75
+  attack: 123
+  defense: 67
+  special attack: 95
+  special defense: 85
+  speed: 95
