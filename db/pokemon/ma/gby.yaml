@@ -1,0 +1,18 @@
+name: "Magby"
+category: "Live Coal"
+index: 146
+types:
+  - "Fire"
+evolutions:
+  -
+    method:
+      level: 30
+    pokemon:
+      name: "Magmar"
+stats:
+  hp: 45
+  attack: 65
+  defense: 37
+  special attack: 75
+  special defense: 55
+  speed: 83

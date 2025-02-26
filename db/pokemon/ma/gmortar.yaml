@@ -1,0 +1,12 @@
+name: "Magmortar"
+category: "Blast"
+index: 148
+types:
+  - "Fire"
+stats:
+  hp: 80
+  attack: 85
+  defense: 67
+  special attack: 125
+  special defense: 100
+  speed: 83

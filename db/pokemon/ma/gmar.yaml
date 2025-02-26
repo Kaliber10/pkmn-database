@@ -1,0 +1,18 @@
+name: "Magmar"
+category: "Spitfire"
+index: 147
+types:
+  - "Fire"
+evolutions:
+  -
+    method:
+      item: "Fire Stone"
+    pokemon:
+      name: "Magmortar"
+stats:
+  hp: 65
+  attack: 90
+  defense: 57
+  special attack: 105
+  special defense: 85
+  speed: 93
