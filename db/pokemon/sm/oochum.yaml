@@ -1,0 +1,19 @@
+name: "Smoochum"
+category: "Kiss"
+index: 141
+types:
+  - "Ice"
+  - "Fairy"
+evolutions:
+  -
+    method:
+      level: 30
+    pokemon:
+      name: "Jynx"
+stats:
+  hp: 45
+  attack: 30
+  defense: 15
+  special attack: 85
+  special defense: 65
+  speed: 65

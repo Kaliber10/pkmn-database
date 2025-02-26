@@ -1,0 +1,13 @@
+name: "Jynx"
+category: "Human Shape"
+index: 142
+types:
+  - "Ice"
+  - "Fairy"
+stats:
+  hp: 65
+  attack: 50
+  defense: 35
+  special attack: 115
+  special defense: 95
+  speed: 95
