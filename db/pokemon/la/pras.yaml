@@ -1,0 +1,13 @@
+name: "Lapras"
+category: "Transport"
+index: 153
+types:
+  - "Water"
+  - "Fairy"
+stats:
+  hp: 130
+  attack: 75
+  defense: 85
+  special attack: 85
+  special defense: 100
+  speed: 60
