@@ -1,0 +1,12 @@
+name: "Leafeon"
+category: "Verdant"
+index: 161
+types:
+  - "Grass"
+stats:
+  hp: 110
+  attack: 95
+  defense: 130
+  special attack: 60
+  special defense: 65
+  speed: 65

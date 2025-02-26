@@ -1,0 +1,53 @@
+name: "Eevee"
+category: "Evolution"
+index: 155
+types:
+  - "Normal"
+evolutions:
+  -
+    method:
+      item: "Water Stone"
+    pokemon:
+      name: "Vaporeon"
+  -
+    method:
+      item: "Thunder Stone"
+    pokemon:
+      name: "Jolteon"
+  -
+    method:
+      item: "Fire Stone"
+    pokemon:
+      name: "Flareon"
+  -
+    method:
+      item: "Dawn Stone"
+    pokemon:
+      name: "Espeon"
+  -
+    method:
+      item: "Dusk Stone"
+    pokemon:
+      name: "Umbreon"
+  -
+    method:
+      item: "Leaf Stone"
+    pokemon:
+      name: "Leafeon"
+  -
+    method:
+      item: "Ice Stone"
+    pokemon:
+      name: "Glaceon"
+  -
+    method:
+      item: "Shiny Stone"
+    pokemon:
+      name: "Sylveon"
+stats:
+  hp: 55
+  attack: 55
+  defense: 50
+  special attack: 45
+  special defense: 65
+  speed: 55

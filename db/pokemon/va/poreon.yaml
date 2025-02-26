@@ -1,0 +1,12 @@
+name: "Vaporeon"
+category: "Bubble Jet"
+index: 156
+types:
+  - "Water"
+stats:
+  hp: 130
+  attack: 65
+  defense: 60
+  special attack: 110
+  special defense: 95
+  speed: 65
