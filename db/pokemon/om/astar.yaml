@@ -1,0 +1,13 @@
+name: "Omastar"
+category: "Spiral"
+index: 168
+types:
+  - "Rock"
+  - "Water"
+stats:
+  hp: 75
+  attack: 100
+  defense: 130
+  special attack: 70
+  special defense: 65
+  speed: 55

@@ -1,0 +1,19 @@
+name: "Omanyte"
+category: "Spiral"
+index: 167
+types:
+  - "Rock"
+  - "Water"
+evolutions:
+  -
+    method:
+      level: 30
+    pokemon:
+      name: "Omastar"
+stats:
+  hp: 35
+  attack: 60
+  defense: 110
+  special attack: 60
+  special defense: 55
+  speed: 35
