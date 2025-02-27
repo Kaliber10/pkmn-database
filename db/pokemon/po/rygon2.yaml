@@ -1,0 +1,18 @@
+name: "Porygon2"
+category: "Virtual"
+index: 165
+types:
+  - "Electric"
+evolutions:
+  -
+    method:
+      item: "Experimental Disc"
+    pokemon:
+      name: "Porygon-Z"
+stats:
+  hp: 85
+  attack: 80
+  defense: 90
+  special attack: 105
+  special defense: 95
+  speed: 60

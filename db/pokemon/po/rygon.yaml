@@ -1,0 +1,18 @@
+name: "Porygon"
+category: "Virtual"
+index: 164
+types:
+  - "Electric"
+evolutions:
+  -
+    method:
+      item: "Upgrade Disc"
+    pokemon:
+      name: "Porygon2"
+stats:
+  hp: 65
+  attack: 60
+  defense: 70
+  special attack: 85
+  special defense: 75
+  speed: 40
