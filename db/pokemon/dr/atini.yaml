@@ -1,0 +1,18 @@
+name: "Dratini"
+category: "Dragon"
+index: 177
+types:
+  - "Dragon"
+evolutions:
+  -
+    method:
+      level: 30
+    pokemon:
+      name: "Dragonair"
+stats:
+  hp: 41
+  attack: 64
+  defense: 45
+  special attack: 50
+  special defense: 50
+  speed: 50

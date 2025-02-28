@@ -1,0 +1,17 @@
+name: ""
+category: ""
+index: 00
+types:
+  - ""
+evolutions:
+  -
+    method:
+    pokemon:
+      name:
+stats:
+  hp:
+  attack:
+  defense:
+  special attack:
+  special defense:
+  speed:
