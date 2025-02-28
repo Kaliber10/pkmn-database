@@ -1,0 +1,13 @@
+name: "Moltres"
+category: "Flame"
+index: 176
+types:
+  - "Fire"
+  - "Flying"
+stats:
+  hp: 90
+  attack: 100
+  defense: 90
+  special attack: 125
+  special defense: 85
+  speed: 90
