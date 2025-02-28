@@ -1,0 +1,32 @@
+name: "Slowpoke"
+category: "Dopey"
+index: 84
+types:
+  - "Water"
+evolutions:
+  -
+    method:
+      level: 23
+    pokemon:
+      name: "Slowking"
+stats:
+  hp: 90
+  attack: 65
+  defense: 65
+  special attack: 40
+  special defense: 40
+  speed: 15
+alternate:
+  -
+    name: "Bro"
+    condition:
+      holding: "Shell"
+    type:
+      - "Water"
+    stats:
+      hp: 90
+      attack: 110
+      defense: 110
+      special attack: 55
+      special defense: 80
+      speed: 30

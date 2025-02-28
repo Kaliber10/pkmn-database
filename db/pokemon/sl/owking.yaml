@@ -1,0 +1,27 @@
+name: "Slowking"
+category: "Royal"
+index: 85
+types:
+  - "Water"
+  - "Psychic"
+stats:
+  hp: 95
+  attack: 65
+  defense: 60
+  special attack: 65
+  special defense: 140
+  speed: 30
+alternate:
+  name: "Crowned"
+  condition:
+    holding: "Shell"
+  type:
+    - "Water"
+    - "Psychic"
+  stats:
+    hp: 95
+    attack: 65
+    defense: 80
+    special attack: 110
+    special defense: 110
+    speed: 30
