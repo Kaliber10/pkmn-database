@@ -1,17 +1,18 @@
-name: ""
-category: ""
-index: 00
+name: "Dragonair"
+category: "Dragon"
+index: 178
 types:
-  - ""
+  - "Dragon"
 evolutions:
   -
     method:
+      level: 55
     pokemon:
-      name:
+      name: "Dragonair"
 stats:
-  hp:
-  attack:
-  defense:
-  special attack:
-  special defense:
-  speed:
+  hp: 61
+  attack: 84
+  defense: 65
+  special attack: 70
+  special defense: 70
+  speed: 70
