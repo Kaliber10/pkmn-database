@@ -1,0 +1,12 @@
+name: "Hitmonchan"
+category: "Punching"
+index: 115
+types:
+  - "Fighting"
+stats:
+  hp: 50
+  attack: 105
+  defense: 79
+  special attack: 35
+  special defense: 110
+  speed: 76

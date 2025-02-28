@@ -1,0 +1,12 @@
+name: "Hitmonlee"
+category: "Kicking"
+index: 114
+types:
+  - "Fighting"
+stats:
+  hp: 50
+  attack: 110
+  defense: 53
+  special attack: 35
+  special defense: 110
+  speed: 97
