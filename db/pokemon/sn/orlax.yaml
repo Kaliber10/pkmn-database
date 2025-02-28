@@ -1,0 +1,12 @@
+name: "Snorlax"
+category: "Sleeping"
+index: 173
+types:
+  - "Normal"
+stats:
+  hp: 160
+  attack: 110
+  defense: 65
+  special attack: 65
+  special defense: 110
+  speed: 30
