@@ -1,0 +1,13 @@
+name: "Articuno"
+category: "Freeze"
+index: 174
+types:
+  - "Ice"
+  - "Flying"
+stats:
+  hp: 90
+  attack: 85
+  defense: 100
+  special attack: 95
+  special defense: 125
+  speed: 85
