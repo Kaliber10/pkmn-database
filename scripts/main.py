@@ -1,14 +1,17 @@
 import sys
 import yaml
-import build_pokemon
 import traceback
 import pathlib
-import pydom
 
-class DB_Entry():
-
-    def __init__(self, type, name, path):
-        self.type = type
+# This is a list of helper functions
+class DBEntry():
+    '''A instance of a database entry
+    
+    This is a representative of an entry that is the name of the file, where the name is the
+    true name (not the split name), and the path to the file to access the data.
+    '''
+    def __init__(self, cat, name, path):
+        self.type = cat
         self.name = name
         self.path = path
 
@@ -16,57 +19,47 @@ class DB_Entry():
         return f"{self.name} of db:{self.type}@{self.path}"
 
 def _list_db_files(db: pathlib.Path):
+    '''Create a list of database entries from a database path
 
+    This creates a list of all the entries/files in a database path. This makes it easier
+    to access.
+    '''
     info = []
     for e in db.glob('**/*.yaml'):
+        # The name is formed by the two chars of the directory and the rest of the file,
+        # except for the exception.
         name = e.parts[-2] + e.parts[-1].split(".")[0]
-        info.append(DB_Entry(e.parts[-3], name, str(e)))
+        info.append(DBEntry(e.parts[-3], name, str(e)))
     return info
+# End helper section
 
 def main():
+    
+    # Set the path to the top of the project so that it is consistent when searching for files.
     main_location = pathlib.Path(__file__)
-    top = main_location.parent.parent
-    pokemon_db = pathlib.Path(top).joinpath("db/pokemon")
-    pokemon = _list_db_files(pokemon_db)
-    pokemon_pages = pathlib.Path(top).joinpath("pokemon")
-    pokemon_pages.mkdir(exist_ok=True)
-    index_table = []
-    for p in pokemon:
-        try:
-            f = open(pathlib.Path(pokemon_pages).joinpath(p.name + ".html"), "w+")
-            data = yaml.safe_load(open(p.path, "r"))
-            build_pokemon.builder(data, f)
-            row = pydom.TableRow()
-            row.children.append(pydom.TableDataCell())
-            row.children.append(pydom.TableDataCell())
-            row.children[0].text_content = str(data["index"])
-            row.children[1].children.append(pydom.Anchor(href=f"pokemon/{p.name}.html"))
-            row.children[1].children[0].text_content = data["name"]
-            index_table.append(row)
-        except:
-            traceback.print_exc()
-            return 1
+    top = main_location.parent.parent # This will be the top level of the project
 
-    index_table = sorted(index_table, key=lambda x: x.children[0].text_content)
-    dom = pydom.DOM()
-    body = dom.top.children[1]
-    body.children.append(pydom.Heading1())
-    body.children.append(pydom.Div())
-    body.children[1].children.append(pydom.Heading2())
-    body.children[1].children.append(pydom.Table())
-    body.children[0].text_content = "Database"
-    body.children[1].children[0].text_content = "Pokemon"
-    t = body.children[1].children[1]
-    t.children.append(pydom.TableRow())
-    t.children[0].children.append(pydom.TableHeader())
-    t.children[0].children.append(pydom.TableHeader())
-    t.children[0].children[0].text_content = "No."
-    t.children[0].children[1].text_content = "Name"
-    for e in index_table:
-        t.children.append(e)
-    index_page = open(pathlib.Path(top).joinpath("index.html"), "w+")
-    dom.print(stream=index_page)
-    return 0
+    db_pokemon = pathlib.Path(top).joinpath("db/pokemon") # Add the path to the pokemon database
+    pokemon = _list_db_files(db_pokemon) 
+
+    index_tracker = {}
+    evolution_table = []
+    evolution_tracker = {}
+    # Get the data to make it easier to build the files
+    for entry in pokemon:
+        data = yaml.safe_load(open(entry.path, "r"))
+        index_tracker[data['index']] = data["name"]
+        if "evolutions" in data:
+            for evo in data["evolutions"]:
+                evolution_table.append((data["name"], evo["pokemon"]["name"], evo["method"],))
+                if data["name"] in evolution_tracker:
+                    # Since it is tracking the latest evolution added
+                    evolution_tracker[data["name"]].append(len(evolution_table) - 1)
+                else:
+                    evolution_tracker[data["name"]] = [len(evolution_table) - 1]
+    # This will convert the dictionary to a list
+    index_tracker = [x[1] for x in sorted(index_tracker.items(), key=lambda x: x[0])]
+    # Now all the hard to grab data is collected.
 
 if __name__ == "__main__":
     sys.exit(main())
