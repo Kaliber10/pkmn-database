@@ -110,7 +110,7 @@ def _build_index_page(index):
     page += "        </tr>\n"
     for i, data in enumerate(index):
         block  =  "        <tr>\n"
-        block += f"          <td>{i}</td>\n"
+        block += f"          <td>{i + 1}</td>\n"
         block +=  "          <td>\n"
         block += f"            <a href=\"pokemon/{data[0]}.html\">{data[1]}</a>\n"
         block +=  "          </td>\n"
