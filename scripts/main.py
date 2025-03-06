@@ -79,12 +79,24 @@ class PokemonBuilder():
 
         return table
 
+    def _build_nav_bar(self):
+        block = "<div>\n"
+        if self.neighbors[0]:
+            block += f"  <a href=\"{self.neighbors[0][0]}.html\">{self.neighbors[0][1]}</a>\n"
+        block += "  <a href=\"../../index.html\">Home</a>\n"
+        if self.neighbors[1]:
+            block += f"  <a href=\"{self.neighbors[1][0]}.html\">{self.neighbors[1][1]}</a>\n"
+        block += "</div>\n"
+
+        return block
+
     def build_page(self):
         page  =  "<!DOCTYPE html>\n"
         page +=  "<html>\n"
         page +=  "  <head>\n"
         page +=  "  </head>\n"
         page +=  "  <body>\n"
+        page += _html_block_indenter(self._build_nav_bar(), 4)
         page += f"    <h1>{self.name}</h1>\n"
         page +=  "    <ul style=\"list-style:none\">\n"
         for t in self.types:
@@ -160,7 +172,15 @@ def main():
     for entry in pokemon:
         try:
             data = yaml.safe_load(open(entry.path, "r"))
-            builder = PokemonBuilder(data, None, None)
+            # Because index is 1 indexed, to map it to a list, 1 is considered the first value.
+            # The Pokemon's index is actual one value above what their index is in index_tracker.
+            if data["index"] == 1:
+                neighbors = (None, index_tracker[data["index"]],)
+            elif data["index"] == len(index_tracker):
+                neighbors = (index_tracker[data["index"] - 2], None,)
+            else:
+                neighbors = (index_tracker[data["index"] - 2], index_tracker[data["index"]],)
+            builder = PokemonBuilder(data, neighbors, None)
             with open(pathlib.Path(pokemon_pages).joinpath(entry.name + ".html"), "w+") as f:
                 f.write(builder.build_page())
         except:
