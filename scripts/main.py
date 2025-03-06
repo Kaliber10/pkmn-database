@@ -86,8 +86,10 @@ class PokemonBuilder():
         page +=  "  </head>\n"
         page +=  "  <body>\n"
         page += f"    <h1>{self.name}</h1>\n"
-        types_str = " ".join(self.types)
-        page += f"    <p>{types_str}</p>\n"
+        page +=  "    <ul style=\"list-style:none\">\n"
+        for t in self.types:
+            page += f"      <li>{t}</li>\n"
+        page +=  "    </ul>\n"
         page += _html_block_indenter(self._build_stats_table(), 4)
         page +=  "  </body>\n"
         page +=  "</html>"
