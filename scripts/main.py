@@ -34,11 +34,13 @@ def _list_db_files(db: pathlib.Path):
 
 def _html_block_indenter(block: str, indent: int):
     '''Helper function to indent a block of HTML for cleaniness'''
-    lines = block.split("\n") # split on every new line
+    lines = block.split("\n")[:-1] # split on every new line, but remove the extra blank from Python
     reformatted = []
     for line in lines:
-        reformatted.append(" " * indent + line) # This will add
-    return "\n".join(reformatted) # recombine the block together
+        reformatted.append(" " * indent + line) # This will add the indent.
+    r = "\n".join(reformatted)
+    r += "\n" # Return the newline that was stripped earlier
+    return r
 
 class PokemonBuilder():
     '''A instance of Pokemon data that is used to build an HTML page
