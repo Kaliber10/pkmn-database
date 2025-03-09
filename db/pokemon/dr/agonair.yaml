@@ -8,7 +8,7 @@ evolutions:
     method:
       level: 55
     pokemon:
-      name: "Dragonair"
+      name: "Dragonite"
 stats:
   hp: 61
   attack: 84
