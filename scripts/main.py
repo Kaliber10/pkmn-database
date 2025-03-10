@@ -166,6 +166,10 @@ def main():
                     evolution_tracker[data["name"]].append(len(evolution_table) - 1)
                 else:
                     evolution_tracker[data["name"]] = [len(evolution_table) - 1]
+                if evo["pokemon"]["name"] in evolution_tracker:
+                    evolution_tracker[evo["pokemon"]["name"]].append(len(evolution_table) - 1)
+                else:
+                    evolution_tracker[evo["pokemon"]["name"]] = [len(evolution_table) - 1]
     # This will convert the dictionary to a list
     index_tracker = [x[1] for x in sorted(index_tracker.items(), key=lambda x: x[0])]
     # Now all the hard to grab data is collected.
