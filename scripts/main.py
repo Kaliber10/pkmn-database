@@ -47,7 +47,7 @@ class PokemonBuilder():
 
     This class is supposed to hold the data for a Pokemon and have the functions to output it to HTML.
     '''
-    def __init__(self, data, indices, previous):
+    def __init__(self, data, indices, family):
         # The data is the data for the Pokemon
         # The indices are the surrounding indices of the pokemon
         # previous is a tuple of the evolution information for what it evolved from
@@ -55,13 +55,8 @@ class PokemonBuilder():
         self.category = data["category"]
         self.index = data["index"]
         self.types = data["types"]
-        if previous:
-            self.preevolution = {"method" : previous[1], "pokemon": {"name": previous[0]}}
         self.neighbors = indices
-        if "evolutions" in data:
-            self.evolutions = data["evolutions"]
-        else:
-            self.evolutions = None
+        self.evolutions = family
         self.stats = data["stats"]
 
     def _build_stats_table(self):
@@ -92,6 +87,43 @@ class PokemonBuilder():
 
         return block
 
+    def _build_evolution_table(self):
+
+        block = "<h2>Evolutions</h2>\n"
+        if not self.evolutions:
+            block += "<p>There are no evolutions</p>\n"
+        else:
+            pres = set(x[0] for x in self.evolutions)
+            posts = set(x[1] for x in self.evolutions)
+            base = pres.difference(posts).pop() # There will only be the base pokemon left
+            finals = list(posts - pres) # A potential list of all final evolutions (split evolutions)
+            middle = list(pres | posts) # The common elements are the middle evolutions
+
+            # build a list of lists to represent the tree?
+            tree = {}
+            for k in [base] + middle + finals:
+                tree[k] = []
+
+            for row in self.evolutions:
+                tree[row[0]].append((row[1], tree[row[1]], row[2],))
+
+            block +=  "<ul>\n"
+            block += f"  <li>{base}\n"
+            block += f"    <ul>\n"
+            for a in tree[base]:
+                block += f"      <li>{a[0]}"
+                if a[1]:
+                    block += "\n        <ul>\n"
+                    for b in a[1]:
+                        block += f"          <li>{b[0]}</li>\n"
+                    block += "        </ul>\n      "
+                block += "</li>\n"
+            block += f"    </ul>\n"
+            block += f"  </li>\n"
+            block += f"</ul>\n"
+
+        return block
+
     def build_page(self):
         page  =  "<!DOCTYPE html>\n"
         page +=  "<html>\n"
@@ -105,6 +137,7 @@ class PokemonBuilder():
             page += f"      <li>{t}</li>\n"
         page +=  "    </ul>\n"
         page += _html_block_indenter(self._build_stats_table(), 4)
+        page += _html_block_indenter(self._build_evolution_table(), 4)
         page +=  "  </body>\n"
         page +=  "</html>"
 
@@ -186,7 +219,38 @@ def main():
                 neighbors = (index_tracker[data["index"] - 2], None,)
             else:
                 neighbors = (index_tracker[data["index"] - 2], index_tracker[data["index"]],)
-            builder = PokemonBuilder(data, neighbors, None)
+            # family is the table for the evolution line
+            if data["name"] not in evolution_tracker:
+                family = None
+            else:
+                poke_stack = []
+                poke_visited = set()
+                visited = set()
+                family = []
+                for i in evolution_tracker[data["name"]]:
+                    visited.add(i)
+                    row = evolution_table[i]
+                    family.append(row)
+                    if row[0] == data["name"]: # was the pokemon the prevolution
+                        poke_stack.append(row[1])
+                    else:
+                        poke_stack.append(row[0])
+                poke_visited.add(data["name"])
+                while len(poke_stack) > 0:
+                    target = poke_stack.pop()
+                    for i in evolution_tracker[target]:
+                        if i in visited:
+                            continue # We already recorded this
+                        visited.add(i)
+                        row = evolution_table[i]
+                        family.append(row)
+                        if row[0] == target and row[1] not in poke_visited:
+                            poke_stack.append(row[1])
+                        elif row[0] not in poke_visited:
+                            poke_stack.append(row[1])
+                    poke_visited.add(target)
+
+            builder = PokemonBuilder(data, neighbors, family)
             with open(pathlib.Path(pokemon_pages).joinpath(entry.name + ".html"), "w+") as f:
                 f.write(builder.build_page())
         except:
