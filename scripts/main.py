@@ -82,13 +82,13 @@ class PokemonBuilder():
         return table
 
     def _build_nav_bar(self):
-        block = "<div>\n"
+        block = "<nav>\n"
         if self.neighbors[0]:
             block += f"  <a href=\"{self.neighbors[0][0]}.html\">{self.neighbors[0][1]}</a>\n"
         block += "  <a href=\"../../index.html\">Home</a>\n"
         if self.neighbors[1]:
             block += f"  <a href=\"{self.neighbors[1][0]}.html\">{self.neighbors[1][1]}</a>\n"
-        block += "</div>\n"
+        block += "</nav>\n"
 
         return block
 
