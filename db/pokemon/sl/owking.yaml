@@ -11,10 +11,16 @@ stats:
   special attack: 65
   special defense: 140
   speed: 30
-alternate:
-  name: "Crowned"
+transformations:
   condition:
-    holding: "Shell"
+    activation:
+      holding:
+        inclusion:
+          - "Discarded Shell"
+    deactivation:
+      holding:
+        exclusion:
+          - "Discarded Shell"
   type:
     - "Water"
     - "Psychic"

@@ -16,11 +16,17 @@ stats:
   special attack: 40
   special defense: 40
   speed: 15
-alternate:
+transformations:
   -
-    name: "Bro"
     condition:
-      holding: "Shell"
+      activation:
+        holding:
+          inclusion:
+            - "Discarded Shell"
+      deactivation:
+        holding:
+          exclusion:
+            - "Discarded Shell"
     type:
       - "Water"
     stats:
