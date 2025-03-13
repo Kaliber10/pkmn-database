@@ -46,3 +46,17 @@ An evolution that is a level up but there is another condition will have that co
         time: str
 For example, this is a condition where the pokemon evolves at a certain time of day at a certain level.
 
+### Forms
+
+Transformations are when a Pokemon changes form in the middle of battle.
+These will have activation and deactivation conditions.
+Activation will be what triggers the transformation to the form.
+Deactivation will be what triggers the transformation to something different.
+If another form is not specified in the activation section,
+it is implied to be from any other form.
+If another form is not specified in the deactivation section,
+it is implied to revert back to its base form.
+
+___Note:___ A Pokemon has a transformation when it can change its shape on its own (depending on the condition).
+It has a variation when it has a permanent difference between species.
+No current Pokemon in the database has a variation at the moment.
