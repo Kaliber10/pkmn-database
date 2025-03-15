@@ -18,6 +18,7 @@ stats:
   speed: 15
 transformations:
   -
+    name: "Hooked"
     condition:
       activation:
         holding:
@@ -27,7 +28,7 @@ transformations:
         holding:
           exclusion:
             - "Discarded Shell"
-    type:
+    types:
       - "Water"
     stats:
       hp: 90
