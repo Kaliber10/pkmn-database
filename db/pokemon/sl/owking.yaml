@@ -12,23 +12,24 @@ stats:
   special defense: 140
   speed: 30
 transformations:
-  name: "Crowned"
-  condition:
-    activation:
-      holding:
-        inclusion:
-          - "Discarded Shell"
-    deactivation:
-      holding:
-        exclusion:
-          - "Discarded Shell"
-  types:
-    - "Water"
-    - "Psychic"
-  stats:
-    hp: 95
-    attack: 65
-    defense: 80
-    special attack: 110
-    special defense: 110
-    speed: 30
+  -
+    name: "Crowned"
+    condition:
+      activation:
+        holding:
+          inclusion:
+            - "Discarded Shell"
+      deactivation:
+        holding:
+          exclusion:
+            - "Discarded Shell"
+    types:
+      - "Water"
+      - "Psychic"
+    stats:
+      hp: 95
+      attack: 65
+      defense: 80
+      special attack: 110
+      special defense: 110
+      speed: 30
