@@ -57,6 +57,10 @@ class PokemonBuilder():
         self.types = data["types"]
         self.neighbors = indices
         self.evolutions = family
+        if "transformations" in data:
+            self.transformations = data["transformations"]
+        else:
+            self.transformations = None
         self.stats = data["stats"]
 
     def _build_stats_table(self):
@@ -124,6 +128,42 @@ class PokemonBuilder():
 
         return block
 
+    def _build_transformations(self):
+        if not self.transformations:
+            block = ""
+        else:
+            block  = "<h2>Form Changes</h2>\n"
+            for t in self.transformations:
+                block  += f"<h3>{t['name']} Form</h3>\n"
+                # Put how the form changes here
+                # Block += "<p> </p>\n"
+                block += f"<ul style=\"list-style:none\">\n"
+                for ft in t["types"]:
+                    block += f"  <li>{ft}</li>\n"
+                block +=  "</ul>\n"
+                condition_text = ""
+                if "holding" in t["condition"]["activation"]:
+                    if "inclusion" in t["condition"]["activation"]["holding"]:
+                        condition_text += f"Changes into {t['name']} while holding " + ", ".join(t["condition"]["activation"]["holding"]["inclusion"]) + "<br>"
+                if "holding" in t["condition"]["deactivation"]:
+                    if "exclusion" in t["condition"]["deactivation"]["holding"]:
+                        condition_text += f"Reverts into Base form when not holding " + ", ".join(t["condition"]["deactivation"]["holding"]["exclusion"])
+
+                block += f"<p>{condition_text}</p>\n"
+                block += f"<h4>Stats<h4>\n"
+                block +=  "<table>\n"
+                for stat in ["hp", "attack", "defense", "special attack", "special defense", "speed"]:
+                    block += f"  <tr>\n"
+                    block += f"    <th scope=\"row\">{stat}</th>\n"
+                    block += f"    <td>{t['stats'][stat]}</td>\n"
+                    block += f"    <td style=\"width:255px\">\n"
+                    block += f"      <div style=\"background-color:black;height:20px;width:calc(100%*{t['stats'][stat]}/255)\"></div>\n"
+                    block += f"    </td>\n"
+                    block += f"  </tr>\n"
+                block += "</table>\n"
+
+        return block
+
     def build_page(self):
         page  =  "<!DOCTYPE html>\n"
         page +=  "<html>\n"
@@ -137,6 +177,7 @@ class PokemonBuilder():
             page += f"      <li>{t}</li>\n"
         page +=  "    </ul>\n"
         page += _html_block_indenter(self._build_stats_table(), 4)
+        page += _html_block_indenter(self._build_transformations(), 4)
         page += _html_block_indenter(self._build_evolution_table(), 4)
         page +=  "  </body>\n"
         page +=  "</html>"
