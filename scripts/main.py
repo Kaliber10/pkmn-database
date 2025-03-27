@@ -248,7 +248,12 @@ def main():
     index_tracker = [x[1] for x in sorted(index_tracker.items(), key=lambda x: x[0])]
     # Now all the hard to grab data is collected.
 
-    pokemon_pages = pathlib.Path(top).joinpath("pokemon")
+    site_loc = pathlib.Path(top).joinpath("site")
+    if not site_loc.exists():
+        site_loc.mkdir()
+    pokemon_pages = site_loc.joinpath("pokemon")
+    if not pokemon_pages.exists():
+        pokemon_pages.mkdir()
     for entry in pokemon:
         try:
             data = yaml.safe_load(open(entry.path, "r"))
@@ -299,7 +304,7 @@ def main():
             return 1
 
     index_page = _build_index_page(index_tracker)
-    with open(pathlib.Path(top).joinpath("index.html"), "w+") as index:
+    with open(site_loc.joinpath("index.html"), "w+") as index:
         index.write(index_page)
 
     return 0
