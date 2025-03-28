@@ -150,7 +150,7 @@ class PokemonBuilder():
                         condition_text += f"Reverts into Base form when not holding " + ", ".join(t["condition"]["deactivation"]["holding"]["exclusion"])
 
                 block += f"<p>{condition_text}</p>\n"
-                block += f"<h4>Stats<h4>\n"
+                block += f"<h4>Stats</h4>\n"
                 block +=  "<table>\n"
                 for stat in ["hp", "attack", "defense", "special attack", "special defense", "speed"]:
                     block += f"  <tr>\n"
