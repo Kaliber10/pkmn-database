@@ -84,7 +84,7 @@ class PokemonBuilder():
         block = "<nav>\n"
         if self.neighbors[0]:
             block += f"  <a href=\"{self.neighbors[0][0]}.html\">{self.neighbors[0][1]}</a>\n"
-        block += "  <a href=\"../../index.html\">Home</a>\n"
+        block += "  <a href=\"/index.html\">Home</a>\n"
         if self.neighbors[1]:
             block += f"  <a href=\"{self.neighbors[1][0]}.html\">{self.neighbors[1][1]}</a>\n"
         block += "</nav>\n"
