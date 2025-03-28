@@ -1,0 +1,13 @@
+ul.type-list {
+    list-style: none;
+}
+
+td.stat-container {
+    width: 255px;
+}
+
+td.stat-container div {
+    background-color: black;
+    height: 20px;
+}
+

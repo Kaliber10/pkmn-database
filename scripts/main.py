@@ -2,6 +2,7 @@ import sys
 import yaml
 import traceback
 import pathlib
+import shutil
 
 # This is a list of helper functions
 class DBEntry():
@@ -71,8 +72,8 @@ class PokemonBuilder():
             block =   "<tr>\n"
             block += f"  <th scope=\"row\">{stat}</th>\n"
             block += f"  <td>{self.stats[stat]}</td>" + "\n"
-            block +=  "  <td style=\"width:255px\">\n"
-            block += f"    <div style=\"background-color:black;height:20px;width:calc(100%*{self.stats[stat]}/255)\"></div>\n"
+            block +=  "  <td class=\"stat-container\">\n"
+            block += f"    <div style=\"width:calc(100%*{self.stats[stat]}/255)\"></div>\n"
             block +=  "  </td>\n"
             block +=  "</tr>\n"
             table += _html_block_indenter(block, 2)
@@ -137,7 +138,7 @@ class PokemonBuilder():
                 block  += f"<h3>{t['name']} Form</h3>\n"
                 # Put how the form changes here
                 # Block += "<p> </p>\n"
-                block += f"<ul style=\"list-style:none\">\n"
+                block += f"<ul class=\"type-list\">\n"
                 for ft in t["types"]:
                     block += f"  <li>{ft}</li>\n"
                 block +=  "</ul>\n"
@@ -156,8 +157,8 @@ class PokemonBuilder():
                     block += f"  <tr>\n"
                     block += f"    <th scope=\"row\">{stat}</th>\n"
                     block += f"    <td>{t['stats'][stat]}</td>\n"
-                    block += f"    <td style=\"width:255px\">\n"
-                    block += f"      <div style=\"background-color:black;height:20px;width:calc(100%*{t['stats'][stat]}/255)\"></div>\n"
+                    block += f"    <td class=\"stat-container\">\n"
+                    block += f"      <div style=\"width:calc(100%*{t['stats'][stat]}/255)\"></div>\n"
                     block += f"    </td>\n"
                     block += f"  </tr>\n"
                 block += "</table>\n"
@@ -168,11 +169,12 @@ class PokemonBuilder():
         page  =  "<!DOCTYPE html>\n"
         page +=  "<html>\n"
         page +=  "  <head>\n"
+        page +=  "    <link rel=\"stylesheet\" href=\"/styles/styles.css\" />\n"
         page +=  "  </head>\n"
         page +=  "  <body>\n"
         page += _html_block_indenter(self._build_nav_bar(), 4)
         page += f"    <h1>{self.name}</h1>\n"
-        page +=  "    <ul style=\"list-style:none\">\n"
+        page +=  "    <ul class=\"type-list\">\n"
         for t in self.types:
             page += f"      <li>{t}</li>\n"
         page +=  "    </ul>\n"
@@ -251,6 +253,10 @@ def main():
     site_loc = pathlib.Path(top).joinpath("site")
     if not site_loc.exists():
         site_loc.mkdir()
+    styles_dir = site_loc.joinpath("styles")
+    if not styles_dir.exists():
+        styles.dir.mkdir()
+    shutil.copy(top.joinpath("page_resources/site-style.css"), styles_dir.joinpath("styles.css"))
     pokemon_pages = site_loc.joinpath("pokemon")
     if not pokemon_pages.exists():
         pokemon_pages.mkdir()
