@@ -11,3 +11,21 @@ td.stat-container div {
     height: 20px;
 }
 
+.evo-item {
+    padding-left: 40px;
+    margin-top:16px;
+    margin-bottom: 16px;
+}
+
+ul.evo-row {
+    display: inline;
+    list-style:none;
+    padding: 0;
+}
+
+li.evo-element {
+    padding: 8px;
+    border: solid black;
+    display: inline-block;
+}
+

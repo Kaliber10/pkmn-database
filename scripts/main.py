@@ -114,20 +114,23 @@ class PokemonBuilder():
             for row in self.evolutions:
                 tree[row[0]].append((row[1], tree[row[1]], row[2],))
 
-            block +=  "<ul>\n"
-            block += f"  <li>{base}\n"
-            block += f"    <ul>\n"
+            block +=  "<div class=\"evo-item\">\n"
+            block +=  "  <ul class=\"evo-row\">\n"
+            block += f"    <li class=\"evo-element\">{base}</li>\n"
+            block +=  "  </ul>\n"
             for a in tree[base]:
-                block += f"      <li>{a[0]}"
-                if a[1]:
-                    block += "\n        <ul>\n"
-                    for b in a[1]:
-                        block += f"          <li>{b[0]}</li>\n"
-                    block += "        </ul>\n      "
-                block += "</li>\n"
-            block += f"    </ul>\n"
-            block += f"  </li>\n"
-            block += f"</ul>\n"
+                block +=  "  <div class=\"evo-item\">\n"
+                block +=  "    <ul class=\"evo-row\">\n"
+                block += f"      <li class=\"evo-element\">{a[0]}</li>\n"
+                block +=  "    </ul>\n"
+                for b in a[1]:
+                    block +=  "    <div class=\"evo-item\">\n"
+                    block +=  "      <ul class=\"evo-row\">\n"
+                    block += f"        <li class=\"evo-element\">{b[0]}</li>\n"
+                    block +=  "      </ul>\n"
+                    block +=  "    </div>\n"
+                block +=  "  </div>\n"
+            block +=  "</div>\n"
 
         return block
 
