@@ -45,6 +45,26 @@ def _html_block_indenter(block: str, indent: int):
     r += "\n" # Return the newline that was stripped earlier
     return r
 
+def _evo_method_formatter(method: dict):
+    if len(method) == 1 and list(method) == ["level"]:
+        return f"Level {method['level']}"
+    if len(method) == 2 and "level" in method and "condition" in method:
+        if list(method["condition"]) == ["gender"]:
+            return f"Level {method['level']} while {method['condition']['gender'].title()}"
+        if list(method["condition"]) == ["time"]:
+            return f"Level {method['level']} during {method['condition']['time'].title()}"
+        if list(method["condition"]) == ["hold"]:
+            if method["level"] == 1:
+                return f"Level Up While Holding {method['condition']['hold'].title()}"
+            else:
+                return f"Level {method['level']} While Holding {method['condition']['hold'].title()}"
+    if len(method) == 1 and list(method) == ["item"]:
+        return f"Use {method['item']}"
+    if len(method) == 1 and list(method) == ["happiness"]:
+        if len(method["happiness"]) == 1 and list(method["happiness"]) == ["eq_exceeds"]:
+            return f"Happiness Level Reaches {method['happiness']['eq_exceeds']}"
+    return str(method) # This is to make sure some string is always returned.
+
 class PokemonBuilder():
     '''A instance of Pokemon data that is used to build an HTML page
 
@@ -121,11 +141,15 @@ class PokemonBuilder():
             for a in tree[base]:
                 block +=  "  <div class=\"evo-item\">\n"
                 block +=  "    <ul class=\"evo-row\">\n"
+                block += f"      <li class=\"evo-element\">{_evo_method_formatter(a[2])}</li>\n"
+                block +=  "      <li class=\"evo-arrow\">&rarr;</li>\n"
                 block += f"      <li class=\"evo-element\">{a[0]}</li>\n"
                 block +=  "    </ul>\n"
                 for b in a[1]:
                     block +=  "    <div class=\"evo-item\">\n"
                     block +=  "      <ul class=\"evo-row\">\n"
+                    block += f"        <li class=\"evo-element\">{_evo_method_formatter(b[2])}</li>\n"
+                    block +=  "        <li class=\"evo-arrow\">&rarr;</li>\n"
                     block += f"        <li class=\"evo-element\">{b[0]}</li>\n"
                     block +=  "      </ul>\n"
                     block +=  "    </div>\n"
