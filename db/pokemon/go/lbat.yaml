@@ -6,7 +6,7 @@ types:
 evolutions:
   -
     method:
-      level: 22
+      level: 38
     pokemon:
       name: "Crobat"
 stats:

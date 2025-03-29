@@ -7,13 +7,17 @@ evolutions:
   -
     method:
       level: 16
-      gender: "female"
+      condition: {
+        gender: "female"
+      }
     pokemon:
       name: "Nidorina"
   -
     method:
       level: 16
-      gender: "male"
+      condition: {
+        gender: "male"
+      }
     pokemon:
       name: "Nidorino"
 stats:

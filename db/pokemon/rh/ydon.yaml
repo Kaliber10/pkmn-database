@@ -6,7 +6,7 @@ types:
 evolutions:
   -
     method:
-      level: 30
+      level: 45
     pokemon:
       name: "Rhyperior"
 stats:
