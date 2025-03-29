@@ -35,6 +35,8 @@ def _list_db_files(db: pathlib.Path):
 
 def _html_block_indenter(block: str, indent: int):
     '''Helper function to indent a block of HTML for cleaniness'''
+    if not block: # If it is an empty string, do nothing
+        return block
     lines = block.split("\n")[:-1] # split on every new line, but remove the extra blank from Python
     reformatted = []
     for line in lines:
