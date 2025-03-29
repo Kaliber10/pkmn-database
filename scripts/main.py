@@ -169,7 +169,7 @@ class PokemonBuilder():
                 # Block += "<p> </p>\n"
                 block += f"<ul class=\"type-list\">\n"
                 for ft in t["types"]:
-                    block += f"  <li>{ft}</li>\n"
+                    block += f"  <li class=\"type-icon-{ft.lower()}\">{ft}</li>\n"
                 block +=  "</ul>\n"
                 condition_text = ""
                 if "holding" in t["condition"]["activation"]:
@@ -205,7 +205,7 @@ class PokemonBuilder():
         page += f"    <h1>{self.name}</h1>\n"
         page +=  "    <ul class=\"type-list\">\n"
         for t in self.types:
-            page += f"      <li>{t}</li>\n"
+            page += f"      <li class=\"type-icon-{t.lower()}\">{t}</li>\n"
         page +=  "    </ul>\n"
         page += _html_block_indenter(self._build_stats_table(), 4)
         page += _html_block_indenter(self._build_transformations(), 4)

@@ -32,3 +32,83 @@ li.evo-element {
 li.evo-arrow {
     display: inline-block;
 }
+
+li[class^="type-icon-"] {
+    color: white;
+    padding: 4px;
+    margin: 4px;
+    width: 6em;
+    text-align: center;
+}
+
+li.type-icon-normal {
+    background-color: gray;
+}
+
+li.type-icon-fighting {
+    background-color: orange;
+}
+
+li.type-icon-flying {
+    background-color: deepskyblue;
+}
+
+li.type-icon-poison {
+    background-color: purple;
+}
+
+li.type-icon-ground {
+    background-color: brown;
+}
+
+li.type-icon-rock {
+    background-color: tan;
+}
+
+li.type-icon-bug {
+    background-color: yellowgreen;
+}
+
+li.type-icon-ghost {
+    background-color: rebeccapurple;
+}
+
+li.type-icon-steel {
+    background-color: lightsteelblue;
+}
+
+li.type-icon-fire {
+    background-color: red;
+}
+
+li.type-icon-water {
+    background-color: blue;
+}
+
+li.type-icon-grass {
+    background-color: green;
+}
+
+li.type-icon-electric {
+    background-color: gold;
+}
+
+li.type-icon-psychic {
+    background-color: hotpink;
+}
+
+li.type-icon-ice {
+    background-color: cyan;
+}
+
+li.type-icon-dragon {
+    background-color: mediumblue
+}
+
+li.type-icon-dark {
+    background-color: black;
+}
+
+li.type-icon-fairy {
+    background-color: plum;
+}
