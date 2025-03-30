@@ -89,17 +89,19 @@ class PokemonBuilder():
     def _build_stats_table(self):
         # This is the order to print the stats
         stat_order = ["hp", "attack", "defense", "special attack", "special defense", "speed"]
-        table = "<h2>Stats</h2>\n<table>\n"
+        table  = "<h2>Stats</h2>\n"
+        table += "<div class=\"stat-table\">\n"
         for stat in stat_order:
-            block =   "<tr>\n"
-            block += f"  <th scope=\"row\">{stat}</th>\n"
-            block += f"  <td>{self.stats[stat]}</td>" + "\n"
-            block +=  "  <td class=\"stat-container\">\n"
-            block += f"    <div style=\"width:calc(100%*{self.stats[stat]}/255)\"></div>\n"
-            block +=  "  </td>\n"
-            block +=  "</tr>\n"
-            table += _html_block_indenter(block, 2)
-        table += "</table>\n"
+            css_class = stat.replace(" ", "")
+            block  = f"  <div class=\"stat-name-{css_class} stat-cell\">{stat}</div>\n"
+            block += f"  <div class=\"stat-value-{css_class} stat-cell\">{self.stats[stat]}</div>\n"
+            block += f"  <div class=\"stat-bar-{css_class} stat-cell\">\n"
+            block += f"    <svg height=\"100%\" width=\"100%\">\n"
+            block += f"      <rect fill=\"black\" width=\"{self.stats[stat]}px\" height=\"100%\" />\n"
+            block += f"    </svg>\n"
+            block += f"  </div>\n"
+            table += block
+        table += "</div>\n"
 
         return table
 
@@ -181,16 +183,17 @@ class PokemonBuilder():
 
                 block += f"<p>{condition_text}</p>\n"
                 block += f"<h4>Stats</h4>\n"
-                block +=  "<table>\n"
+                block +=  "<div class=\"stat-table\">\n"
                 for stat in ["hp", "attack", "defense", "special attack", "special defense", "speed"]:
-                    block += f"  <tr>\n"
-                    block += f"    <th scope=\"row\">{stat}</th>\n"
-                    block += f"    <td>{t['stats'][stat]}</td>\n"
-                    block += f"    <td class=\"stat-container\">\n"
-                    block += f"      <div style=\"width:calc(100%*{t['stats'][stat]}/255)\"></div>\n"
-                    block += f"    </td>\n"
-                    block += f"  </tr>\n"
-                block += "</table>\n"
+                    css_class = stat.replace(" ", "")
+                    block += f"  <div class=\"stat-name-{css_class} stat-cell\">{stat}</div>\n"
+                    block += f"  <div class=\"stat-value-{css_class} stat-cell\">{t['stats'][stat]}</div>\n"
+                    block += f"  <div class=\"stat-bar-{css_class} stat-cell\">\n"
+                    block += f"    <svg width=\"100%\" height=\"100%\">\n"
+                    block += f"      <rect width=\"{t['stats'][stat]}px\" height=\"100%\" fill=\"black\" />\n"
+                    block += f"    </svg>\n"
+                    block += f"  </div>\n"
+                block += "</div>\n"
 
         return block
 

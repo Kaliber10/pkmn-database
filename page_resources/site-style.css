@@ -33,6 +33,53 @@ li.evo-arrow {
     display: inline-block;
 }
 
+div.stat-table {
+    display: grid;
+    grid-auto-rows: 20px;
+    grid-auto-columns: max-content;
+    gap: 2px;
+}
+
+div[class^="stat-name-"] {
+    grid-column: 1;
+    text-align: center;
+    font-weight: bold;
+}
+
+div[class^="stat-value-"] {
+    grid-column: 2;
+    text-align: center;
+}
+
+div[class^="stat-bar-"] {
+    grid-column: 3;
+    width: 255px;
+}
+
+div[class$="-hp"] {
+    grid-row: 1;
+}
+
+div[class$="-attack"] {
+    grid-row: 2;
+}
+
+div[class$="-defense"] {
+    grid-row: 3;
+}
+
+div[class$="-specialattack"] {
+    grid-row: 4;
+}
+
+div[class$="-specialdefense"] {
+    grid-row: 5;
+}
+
+div[class$="-speed"] {
+    grid-row: 6;
+}
+
 li[class^="type-icon-"] {
     color: white;
     padding: 4px;
