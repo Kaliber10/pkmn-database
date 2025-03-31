@@ -3,6 +3,7 @@ import yaml
 import traceback
 import pathlib
 import shutil
+import operator
 
 # This is a list of helper functions
 class DBEntry():
@@ -122,6 +123,7 @@ class PokemonBuilder():
         if not self.evolutions:
             block += "<p>There are no evolutions</p>\n"
         else:
+            metadata = self.evolutions.pop() # Pop off the metadata to be used.
             pres = set(x[0] for x in self.evolutions)
             posts = set(x[1] for x in self.evolutions)
             base = pres.difference(posts).pop() # There will only be the base pokemon left
@@ -134,21 +136,21 @@ class PokemonBuilder():
                 tree[k] = []
 
             for row in self.evolutions:
-                # pre-evolution : evolution, next evolutions, method
-                tree[row[0]].append((row[1], tree[row[1]], row[2],))
+                # pre-evolution : evolution, next evolutions, method, evolution index
+                tree[row[0]].append((row[1], tree[row[1]], row[2], metadata[row[1]]))
 
             block +=  "<div class=\"evo-item\">\n"
             block +=  "  <ul class=\"evo-row\">\n"
             block += f"    <li class=\"evo-element\">{base}</li>\n"
             block +=  "  </ul>\n"
-            for a in tree[base]:
+            for a in sorted(tree[base], key=operator.itemgetter(3)):
                 block +=  "  <div class=\"evo-item\">\n"
                 block +=  "    <ul class=\"evo-row\">\n"
                 block += f"      <li class=\"evo-element\">{_evo_method_formatter(a[2])}</li>\n"
                 block +=  "      <li class=\"evo-arrow\">&rarr;</li>\n"
                 block += f"      <li class=\"evo-element\">{a[0]}</li>\n"
                 block +=  "    </ul>\n"
-                for b in a[1]:
+                for b in sorted(a[1], key=operator.itemgetter(3)):
                     block +=  "    <div class=\"evo-item\">\n"
                     block +=  "      <ul class=\"evo-row\">\n"
                     block += f"        <li class=\"evo-element\">{_evo_method_formatter(b[2])}</li>\n"
@@ -260,6 +262,7 @@ def main():
     pokemon = _list_db_files(db_pokemon) 
 
     index_tracker = {} # Create a list of pokemon by index number
+    index_map = {} # Create a map of Pokemon names to their index number
     evolution_table = [] # Create a table of all evolutions formatted where each row is "Pre-evolution, Evolution, Method"
     evolution_tracker = {} # Create a map of Pokemon to a list that contains all indexes that reference them in the evolution_table
     # Get the data to make it easier to build the files
@@ -267,6 +270,7 @@ def main():
         data = yaml.safe_load(open(entry.path, "r"))
         # The index table is used for linking to pages, so the name used for the file is used.
         index_tracker[data['index']] = (entry.name, data["name"],)
+        index_map[data['name']] = data['index']
         if "evolutions" in data:
             for evo in data["evolutions"]:
                 evolution_table.append((data["name"], evo["pokemon"]["name"], evo["method"],))
@@ -340,6 +344,10 @@ def main():
                         elif row[0] not in poke_visited:
                             poke_stack.append(row[0])
                     poke_visited.add(target)
+                # To help with ordering split evolutions, the index of each Pokemon in the line is gathered, and passed to the family object
+                meta_index = {name: index_map[name] for name in poke_visited}
+                # Put the metadata information at the end so that it can be popped off in the future
+                family.append(meta_index) # Include the metadata about the index numbers per Pokemon
 
             builder = PokemonBuilder(data, neighbors, family)
             with open(pathlib.Path(pokemon_pages).joinpath(entry.name + ".html"), "w+") as f:
