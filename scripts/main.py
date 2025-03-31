@@ -134,6 +134,7 @@ class PokemonBuilder():
                 tree[k] = []
 
             for row in self.evolutions:
+                # pre-evolution : evolution, next evolutions, method
                 tree[row[0]].append((row[1], tree[row[1]], row[2],))
 
             block +=  "<div class=\"evo-item\">\n"
@@ -258,9 +259,9 @@ def main():
     db_pokemon = pathlib.Path(top).joinpath("db/pokemon") # Add the path to the pokemon database
     pokemon = _list_db_files(db_pokemon) 
 
-    index_tracker = {}
-    evolution_table = []
-    evolution_tracker = {}
+    index_tracker = {} # Create a list of pokemon by index number
+    evolution_table = [] # Create a table of all evolutions formatted where each row is "Pre-evolution, Evolution, Method"
+    evolution_tracker = {} # Create a map of Pokemon to a list that contains all indexes that reference them in the evolution_table
     # Get the data to make it easier to build the files
     for entry in pokemon:
         data = yaml.safe_load(open(entry.path, "r"))
@@ -307,28 +308,34 @@ def main():
             if data["name"] not in evolution_tracker:
                 family = None
             else:
-                poke_stack = []
-                poke_visited = set()
-                visited = set()
-                family = []
+                poke_stack = [] # This stack will collect Pokemon found in each row, to be examined later
+                poke_visited = set() # Track what Pokemon we've examined to avoid repeats
+                visited = set() # Track what rows in the evolution table we've looked at to avoid redundant examinations
+                family = [] # The list of rows from the evolution table that involve the respective Pokemon line
+                # Start with the Pokemon currently being read
+                # Look through each row in the evolution table that references the Pokemon
+                # Evolution Tracker => Pokemon : [row_index, row_index...]
+                # Evolution Table => [Pre-evolution, Evolution, Method] (this is a row)
                 for i in evolution_tracker[data["name"]]:
-                    visited.add(i)
+                    visited.add(i) # Immediately add the Pokemon to the visited set
                     row = evolution_table[i]
                     family.append(row)
                     if row[0] == data["name"]: # was the pokemon the prevolution
                         poke_stack.append(row[1])
                     else:
                         poke_stack.append(row[0])
-                poke_visited.add(data["name"])
+                poke_visited.add(data["name"]) # After processing, add the Pokemon to the set
+                # Loop until every Pokemon in the line has been examined
                 while len(poke_stack) > 0:
                     target = poke_stack.pop()
+                    # Do the same thing that was done above
                     for i in evolution_tracker[target]:
                         if i in visited:
                             continue # We already recorded this
                         visited.add(i)
                         row = evolution_table[i]
                         family.append(row)
-                        if row[0] == target and row[1] not in poke_visited:
+                        if row[0] == target and row[1] not in poke_visited: # Do not add a Pokemon that was already examined
                             poke_stack.append(row[1])
                         elif row[0] not in poke_visited:
                             poke_stack.append(row[0])
