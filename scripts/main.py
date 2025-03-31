@@ -331,7 +331,7 @@ def main():
                         if row[0] == target and row[1] not in poke_visited:
                             poke_stack.append(row[1])
                         elif row[0] not in poke_visited:
-                            poke_stack.append(row[1])
+                            poke_stack.append(row[0])
                     poke_visited.add(target)
 
             builder = PokemonBuilder(data, neighbors, family)
