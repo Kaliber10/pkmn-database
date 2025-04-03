@@ -320,30 +320,26 @@ def main():
                 # Look through each row in the evolution table that references the Pokemon
                 # Evolution Tracker => Pokemon : [row_index, row_index...]
                 # Evolution Table => [Pre-evolution, Evolution, Method] (this is a row)
-                for i in evolution_tracker[data["name"]]:
-                    visited.add(i) # Immediately add the Pokemon to the visited set
-                    row = evolution_table[i]
-                    family.append(row)
-                    if row[0] == data["name"]: # was the pokemon the prevolution
-                        poke_stack.append(row[1])
-                    else:
-                        poke_stack.append(row[0])
-                poke_visited.add(data["name"]) # After processing, add the Pokemon to the set
+                poke_stack.append(data["name"]) # Add the Pokemon to the stack to begin
                 # Loop until every Pokemon in the line has been examined
                 while len(poke_stack) > 0:
                     target = poke_stack.pop()
-                    # Do the same thing that was done above
                     for i in evolution_tracker[target]:
                         if i in visited:
-                            continue # We already recorded this
-                        visited.add(i)
+                            continue # This means we've processed this row in the table already, and found the Pokemon involved
+                        visited.add(i) # Immediately add row in the table to the visited set
                         row = evolution_table[i]
                         family.append(row)
-                        if row[0] == target and row[1] not in poke_visited: # Do not add a Pokemon that was already examined
+                        # If the name is in the first index, then it is the pre evolution,
+                        # and we want to add the evolution to be examined.
+                        # If the name is not in the first index, it is implied that it is in the second index,
+                        # and means we want to examine the pre-evolution.
+                        # This is only if the (pre-)evolution has not been examined yet.
+                        if row[0] == target and row[1] not in poke_visited:
                             poke_stack.append(row[1])
                         elif row[0] not in poke_visited:
                             poke_stack.append(row[0])
-                    poke_visited.add(target)
+                    poke_visited.add(target) # After processing the Pokemon, add it to the set
                 # To help with ordering split evolutions, the index of each Pokemon in the line is gathered, and passed to the family object
                 meta_index = {name: index_map[name] for name in poke_visited}
                 # Put the metadata information at the end so that it can be popped off in the future
