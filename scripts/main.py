@@ -278,7 +278,7 @@ def main():
         site_loc.mkdir()
     styles_dir = site_loc.joinpath("styles")
     if not styles_dir.exists():
-        styles.dir.mkdir()
+        styles_dir.mkdir()
     shutil.copy(top.joinpath("page_resources/site-style.css"), styles_dir.joinpath("styles.css"))
     pokemon_pages = site_loc.joinpath("pokemon")
     if not pokemon_pages.exists():
