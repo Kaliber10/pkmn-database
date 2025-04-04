@@ -123,27 +123,13 @@ class PokemonBuilder():
         if not self.evolutions:
             block += "<p>There are no evolutions</p>\n"
         else:
-            metadata = self.evolutions.pop() # Pop off the metadata to be used.
-            pres = set(x[0] for x in self.evolutions)
-            posts = set(x[1] for x in self.evolutions)
-            base = pres.difference(posts).pop() # There will only be the base pokemon left
-            finals = list(posts - pres) # A potential list of all final evolutions (split evolutions)
-            middle = list(pres | posts) # The common elements are the middle evolutions
 
-            # build a list of lists to represent the tree?
-            tree = {}
-            for k in [base] + middle + finals:
-                tree[k] = []
-
-            for row in self.evolutions:
-                # pre-evolution : evolution, next evolutions, method, evolution index
-                tree[row[0]].append((row[1], tree[row[1]], row[2], metadata[row[1]]))
-
+            base = self.evolutions[0] # Get the first Pokemon in the tree
             block +=  "<div class=\"evo-item\">\n"
             block +=  "  <ul class=\"evo-row\">\n"
             block += f"    <li class=\"evo-element\">{base}</li>\n"
             block +=  "  </ul>\n"
-            for a in sorted(tree[base], key=operator.itemgetter(3)):
+            for a in sorted(self.evolutions[base], key=operator.itemgetter(3)):
                 block +=  "  <div class=\"evo-item\">\n"
                 block +=  "    <ul class=\"evo-row\">\n"
                 block += f"      <li class=\"evo-element\">{_evo_method_formatter(a[2])}</li>\n"
@@ -315,7 +301,7 @@ def main():
                 poke_stack = [] # This stack will collect Pokemon found in each row, to be examined later
                 poke_visited = set() # Track what Pokemon we've examined to avoid repeats
                 visited = set() # Track what rows in the evolution table we've looked at to avoid redundant examinations
-                family = [] # The list of rows from the evolution table that involve the respective Pokemon line
+                evo_table = [] # The list of rows from the evolution table that involve the respective Pokemon line, this creates a mini table
                 # Start with the Pokemon currently being read
                 # Look through each row in the evolution table that references the Pokemon
                 # Evolution Tracker => Pokemon : [row_index, row_index...]
@@ -329,7 +315,7 @@ def main():
                             continue # This means we've processed this row in the table already, and found the Pokemon involved
                         visited.add(i) # Immediately add row in the table to the visited set
                         row = evolution_table[i]
-                        family.append(row)
+                        evo_table.append(row)
                         # If the name is in the first index, then it is the pre evolution,
                         # and we want to add the evolution to be examined.
                         # If the name is not in the first index, it is implied that it is in the second index,
@@ -340,10 +326,23 @@ def main():
                         elif row[0] not in poke_visited:
                             poke_stack.append(row[0])
                     poke_visited.add(target) # After processing the Pokemon, add it to the set
-                # To help with ordering split evolutions, the index of each Pokemon in the line is gathered, and passed to the family object
-                meta_index = {name: index_map[name] for name in poke_visited}
-                # Put the metadata information at the end so that it can be popped off in the future
-                family.append(meta_index) # Include the metadata about the index numbers per Pokemon
+
+                pres = set(x[0] for x in evo_table) # Get the pre-evolutions from the table
+                posts = set(x[1] for x in evo_table) # Get the evolutions from the table
+                base = pres.difference(posts).pop() # Getting the difference will isolate the base Pokemon
+                finals = list(posts - pres) # A list of all final evolutions
+                middle = list(pres | posts) # The common elements are the middle evolutions
+
+                family = {} # This is the family tree
+                family[0] = base # To track what the base is for future reference
+                # The 0 is not going to interfere with any other key, and it is a clear indicator of 'first' in a list
+                # Create each node in the tree (where a node is a Pokemon)
+                for p in [base] + middle + finals:
+                    family[p] = []
+
+                for row in evo_table:
+                    # Pokemon : evolution, next evolutions, method, evolution index
+                    family[row[0]].append((row[1], family[row[1]], row[2], index_map[row[1]],))
 
             builder = PokemonBuilder(data, neighbors, family)
             with open(pathlib.Path(pokemon_pages).joinpath(entry.name + ".html"), "w+") as f:
