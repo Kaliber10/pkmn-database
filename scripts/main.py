@@ -7,7 +7,7 @@ import shutil
 # This is a list of helper functions
 class DBEntry():
     '''A instance of a database entry
-    
+
     This is a representative of an entry that is the name of the file, where the name is the
     true name (not the split name), and the path to the file to access the data.
     '''
@@ -238,13 +238,13 @@ def _build_index_page(index):
 # End helper section
 
 def main():
-    
+
     # Set the path to the top of the project so that it is consistent when searching for files.
     main_location = pathlib.Path(__file__)
     top = main_location.parent.parent # This will be the top level of the project
 
     db_pokemon = pathlib.Path(top).joinpath("db/pokemon") # Add the path to the pokemon database
-    pokemon = _list_db_files(db_pokemon) 
+    pokemon = _list_db_files(db_pokemon)
 
     index_tracker = {} # Create a list of pokemon by index number
     index_map = {} # Create a map of Pokemon names to their index number
