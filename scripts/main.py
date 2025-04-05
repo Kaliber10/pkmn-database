@@ -3,7 +3,6 @@ import yaml
 import traceback
 import pathlib
 import shutil
-import operator
 
 # This is a list of helper functions
 class DBEntry():
@@ -129,19 +128,19 @@ class PokemonBuilder():
             block +=  "  <ul class=\"evo-row\">\n"
             block += f"    <li class=\"evo-element\">{base}</li>\n"
             block +=  "  </ul>\n"
-            for a in sorted(self.evolutions[base], key=operator.itemgetter(3)):
+            for p1, method1 in sorted(self.evolutions[base]['evos'], key=lambda x: x[0]["index"]):
                 block +=  "  <div class=\"evo-item\">\n"
                 block +=  "    <ul class=\"evo-row\">\n"
-                block += f"      <li class=\"evo-element\">{_evo_method_formatter(a[2])}</li>\n"
+                block += f"      <li class=\"evo-element\">{_evo_method_formatter(method1)}</li>\n"
                 block +=  "      <li class=\"evo-arrow\">&rarr;</li>\n"
-                block += f"      <li class=\"evo-element\">{a[0]}</li>\n"
+                block += f"      <li class=\"evo-element\">{p1['name']}</li>\n"
                 block +=  "    </ul>\n"
-                for b in sorted(a[1], key=operator.itemgetter(3)):
+                for p2, method2 in sorted(p1["evos"], key=lambda x: x[0]["index"]):
                     block +=  "    <div class=\"evo-item\">\n"
                     block +=  "      <ul class=\"evo-row\">\n"
-                    block += f"        <li class=\"evo-element\">{_evo_method_formatter(b[2])}</li>\n"
+                    block += f"        <li class=\"evo-element\">{_evo_method_formatter(method2)}</li>\n"
                     block +=  "        <li class=\"evo-arrow\">&rarr;</li>\n"
-                    block += f"        <li class=\"evo-element\">{b[0]}</li>\n"
+                    block += f"        <li class=\"evo-element\">{p2['name']}</li>\n"
                     block +=  "      </ul>\n"
                     block +=  "    </div>\n"
                 block +=  "  </div>\n"
@@ -338,11 +337,11 @@ def main():
                 # The 0 is not going to interfere with any other key, and it is a clear indicator of 'first' in a list
                 # Create each node in the tree (where a node is a Pokemon)
                 for p in [base] + middle + finals:
-                    family[p] = []
+                    family[p] = {"name": p, "index": index_map[p] - 1, "filename": index_tracker[index_map[p] - 1][0], "evos": []}
 
                 for row in evo_table:
-                    # Pokemon : evolution, next evolutions, method, evolution index
-                    family[row[0]].append((row[1], family[row[1]], row[2], index_map[row[1]],))
+                    # Pokemon : evolution Pokemon, method
+                    family[row[0]]["evos"].append((family[row[1]], row[2],))
 
             builder = PokemonBuilder(data, neighbors, family)
             with open(pathlib.Path(pokemon_pages).joinpath(entry.name + ".html"), "w+") as f:
