@@ -33,6 +33,10 @@ li.evo-arrow {
     display: inline-block;
 }
 
+li.evo-self {
+    font-weight: bold;
+}
+
 div.stat-table {
     display: grid;
     grid-auto-rows: 20px;

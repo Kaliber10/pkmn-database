@@ -126,21 +126,30 @@ class PokemonBuilder():
             base = self.evolutions[0] # Get the first Pokemon in the tree
             block +=  "<div class=\"evo-item\">\n"
             block +=  "  <ul class=\"evo-row\">\n"
-            block += f"    <li class=\"evo-element\">{base}</li>\n"
+            if base == self.name:
+                block += f"    <li class=\"evo-element evo-self\">{base}</li>\n"
+            else:
+                block += f"    <li class=\"evo-element\"><a href=\"{self.evolutions[base]['filename']}.html\">{base}</a></li>\n"
             block +=  "  </ul>\n"
             for p1, method1 in sorted(self.evolutions[base]['evos'], key=lambda x: x[0]["index"]):
                 block +=  "  <div class=\"evo-item\">\n"
                 block +=  "    <ul class=\"evo-row\">\n"
                 block += f"      <li class=\"evo-element\">{_evo_method_formatter(method1)}</li>\n"
                 block +=  "      <li class=\"evo-arrow\">&rarr;</li>\n"
-                block += f"      <li class=\"evo-element\">{p1['name']}</li>\n"
+                if p1['name'] == self.name:
+                    block += f"      <li class=\"evo-element evo-self\">{p1['name']}</li>\n"
+                else:
+                    block += f"      <li class=\"evo-element\"><a href=\"{self.evolutions[p1['name']]['filename']}.html\">{p1['name']}</a></li>\n"
                 block +=  "    </ul>\n"
                 for p2, method2 in sorted(p1["evos"], key=lambda x: x[0]["index"]):
                     block +=  "    <div class=\"evo-item\">\n"
                     block +=  "      <ul class=\"evo-row\">\n"
                     block += f"        <li class=\"evo-element\">{_evo_method_formatter(method2)}</li>\n"
                     block +=  "        <li class=\"evo-arrow\">&rarr;</li>\n"
-                    block += f"        <li class=\"evo-element\">{p2['name']}</li>\n"
+                    if p2['name'] == self.name:
+                        block += f"        <li class=\"evo-element evo-self\">{p2['name']}</li>\n"
+                    else:
+                        block += f"        <li class=\"evo-element\"><a href=\"{self.evolutions[p2['name']]['filename']}.html\">{p2['name']}</a></li>\n"
                     block +=  "      </ul>\n"
                     block +=  "    </div>\n"
                 block +=  "  </div>\n"
